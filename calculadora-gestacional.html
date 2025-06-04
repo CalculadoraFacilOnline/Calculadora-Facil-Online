@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora Gestacional - Descubra Idade Gestacional e Data do Parto</title>
+  <meta name="description" content="Use nossa calculadora gestacional gratuita para descobrir a idade gestacional, semanas de gravidez e a data provável do parto de forma fácil e rápida." />
+  <meta name="keywords" content="calculadora gestacional, gravidez, semanas de gestação, data provável do parto, idade gestacional" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora Gestacional - Descubra Idade Gestacional e Data do Parto" />
+  <meta property="og:description" content="Calcule rapidamente a idade gestacional, semanas de gravidez e a data provável do parto com nossa calculadora online." />
+  <meta property="og:url" content="https://www.seusite.com/gestacional" />
+  <meta property="og:image" content="https://www.seusite.com/img/gestacional.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora Gestacional - Descubra Idade Gestacional e Data do Parto" />
+  <meta name="twitter:description" content="Calcule rapidamente semanas de gravidez, idade gestacional e a data provável do parto com nossa calculadora online." />
+  <meta name="twitter:image" content="https://www.seusite.com/img/gestacional.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Calculadora Gestacional",
+    "url": "https://www.seusite.com/gestacional",
+    "description": "Calculadora gestacional online gratuita. Descubra facilmente a idade gestacional, semanas de gravidez e a data provável do parto.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online",
+      "url": "https://www.seusite.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.seusite.com/img/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora Gestacional</h1>
+    <p>Descubra semanas e data provável do parto</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Preencha os dados</h2>
+
+      <div class="form-group">
+        <label for="data-ultima-menstruacao">Data da última menstruação:</label>
+        <input type="date" id="data-ultima-menstruacao" />
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularGestacao()">Calcular</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/gestacional.js"></script>
+</body>
+</html>

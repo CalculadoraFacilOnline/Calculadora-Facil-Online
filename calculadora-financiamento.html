@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora de Financiamento - Simule Parcelas Online</title>
+  <meta name="description" content="Calculadora de financiamento online. Simule parcelas, taxas de juros e condições de financiamento de forma rápida e gratuita." />
+  <meta name="keywords" content="calculadora de financiamento, simular financiamento, parcelas, juros, financiamento online, simulação de financiamento" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de Financiamento - Simule Parcelas Online" />
+  <meta property="og:description" content="Simule parcelas, juros e condições de financiamento com nossa calculadora online gratuita. Fácil, rápido e confiável." />
+  <meta property="og:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+  <meta property="og:url" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-financiamento.html" />
+  <meta property="og:site_name" content="Calculadora Fácil Online" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Financiamento - Simule Parcelas Online" />
+  <meta name="twitter:description" content="Simule parcelas, juros e condições de financiamento com nossa calculadora online gratuita. Fácil, rápido e confiável." />
+  <meta name="twitter:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calculadora de Financiamento - Simule Parcelas Online",
+    "url": "https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-financiamento.html",
+    "description": "Calculadora de financiamento online. Simule parcelas, taxas de juros e condições de financiamento de forma rápida e gratuita.",
+    "image": "https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora de Financiamento</h1>
+    <p>Simule parcelas de financiamento</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Preencha os dados</h2>
+
+      <div class="form-group">
+        <label for="valor">Valor do financiamento (R$):</label>
+        <input type="number" id="valor" placeholder="Ex.: 50000" />
+      </div>
+
+      <div class="form-group">
+        <label for="taxa">Taxa de juros (% ao mês):</label>
+        <input type="number" id="taxa" step="0.01" placeholder="Ex.: 1.5" />
+      </div>
+
+      <div class="form-group">
+        <label for="parcelas">Quantidade de parcelas:</label>
+        <input type="number" id="parcelas" placeholder="Ex.: 60" />
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularFinanciamento()">Calcular</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/financiamento.js"></script>
+</body>
+</html>

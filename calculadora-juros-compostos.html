@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora de Juros Compostos - Simule Investimentos Online</title>
+  <meta name="description" content="Calculadora de juros compostos online gratuita. Simule seus rendimentos, investimentos e veja como seu dinheiro pode crescer." />
+  <meta name="keywords" content="calculadora de juros compostos, simulação de investimentos, finanças, investimentos online, rentabilidade, crescimento de dinheiro" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de Juros Compostos - Simule Investimentos Online" />
+  <meta property="og:description" content="Calcule seus rendimentos com nossa calculadora de juros compostos online gratuita. Simples, rápido e fácil." />
+  <meta property="og:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+  <meta property="og:url" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-juros-compostos.html" />
+  <meta property="og:site_name" content="Calculadora Fácil Online" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Juros Compostos - Simule Investimentos Online" />
+  <meta name="twitter:description" content="Calcule seus rendimentos com nossa calculadora de juros compostos online gratuita. Simples, rápido e fácil." />
+  <meta name="twitter:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calculadora de Juros Compostos - Simule Investimentos Online",
+    "url": "https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-juros-compostos.html",
+    "description": "Calculadora de juros compostos online gratuita. Simule seus rendimentos, investimentos e veja como seu dinheiro pode crescer.",
+    "image": "https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora de Juros Compostos</h1>
+    <p>Simule rendimentos e investimentos</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Preencha os dados</h2>
+
+      <div class="form-group">
+        <label for="capital">Capital Inicial (R$):</label>
+        <input type="number" id="capital" placeholder="Ex.: 1000" />
+      </div>
+
+      <div class="form-group">
+        <label for="taxa">Taxa de Juros (% ao mês):</label>
+        <input type="number" id="taxa" step="0.01" placeholder="Ex.: 1.5" />
+      </div>
+
+      <div class="form-group">
+        <label for="periodo">Período (meses):</label>
+        <input type="number" id="periodo" placeholder="Ex.: 12" />
+      </div>
+
+      <div class="form-group">
+        <label for="aporte">Aporte Mensal (opcional):</label>
+        <input type="number" id="aporte" placeholder="Ex.: 200" />
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularJuros()">Calcular</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/juros-compostos.js"></script>
+</body>
+</html>

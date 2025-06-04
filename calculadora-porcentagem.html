@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora de Porcentagem - Descontos, Aumentos e Mais</title>
+  <meta name="description" content="Calculadora de porcentagem online. Calcule descontos, aumentos, variações e descubra percentuais de forma rápida e fácil." />
+  <meta name="keywords" content="calculadora de porcentagem, desconto, aumento, calcular porcentagem, percentual, variação percentual" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de Porcentagem - Descontos, Aumentos e Mais" />
+  <meta property="og:description" content="Calcule descontos, aumentos, variações e descubra percentuais com esta calculadora online gratuita e prática." />
+  <meta property="og:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+  <meta property="og:url" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-porcentagem.html" />
+  <meta property="og:site_name" content="Calculadora Fácil Online" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de Porcentagem - Descontos, Aumentos e Mais" />
+  <meta name="twitter:description" content="Calcule descontos, aumentos, variações e descubra percentuais com esta calculadora online gratuita e prática." />
+  <meta name="twitter:image" content="https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calculadora de Porcentagem - Descontos, Aumentos e Mais",
+    "url": "https://CalculadoraFacilOnline.github.io/calculadoras-online/calculadora-porcentagem.html",
+    "description": "Calculadora de porcentagem online. Calcule descontos, aumentos, variações e descubra percentuais de forma rápida e fácil.",
+    "image": "https://CalculadoraFacilOnline.github.io/calculadoras-online/img/img-calculadora.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora de Porcentagem</h1>
+    <p>Calcule descontos, aumentos e mais</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Preencha os dados</h2>
+
+      <div class="form-group">
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" placeholder="Ex.: 100" />
+      </div>
+
+      <div class="form-group">
+        <label for="porcentagem">Porcentagem (%):</label>
+        <input type="number" id="porcentagem" step="0.01" placeholder="Ex.: 20" />
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo de cálculo:</label>
+        <select id="tipo">
+          <option value="desconto">Desconto</option>
+          <option value="aumento">Aumento</option>
+          <option value="percentual">Qual o percentual?</option>
+        </select>
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularPorcentagem()">Calcular</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/porcentagem.js"></script>
+</body>
+</html>

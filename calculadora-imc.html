@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora de IMC - Calcule seu Índice de Massa Corporal Online</title>
+  <meta name="description" content="Use nossa calculadora de IMC gratuita para descobrir seu Índice de Massa Corporal de forma rápida e fácil. Saiba se está dentro do peso ideal." />
+  <meta name="keywords" content="calculadora de IMC, índice de massa corporal, saúde, peso ideal, peso, altura, saúde online" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de IMC - Calcule seu Índice de Massa Corporal Online" />
+  <meta property="og:description" content="Calcule seu IMC e descubra se está dentro do peso ideal com nossa calculadora online gratuita." />
+  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png" />
+  <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-imc.html" />
+  <meta property="og:site_name" content="Calculadora Fácil Online" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de IMC - Calcule seu Índice de Massa Corporal Online" />
+  <meta name="twitter:description" content="Calcule seu IMC e saiba se está dentro do peso ideal com nossa calculadora online gratuita." />
+  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calculadora de IMC - Índice de Massa Corporal Online",
+    "url": "https://calculadorafacilonline.github.io/calculadoras-online/calculadora-imc.html",
+    "description": "Calculadora de IMC online gratuita. Calcule seu Índice de Massa Corporal de forma rápida e fácil e saiba se está dentro do peso ideal.",
+    "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online",
+      "url": "https://calculadorafacilonline.github.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora de IMC</h1>
+    <p>Descubra seu Índice de Massa Corporal (IMC) e saiba se está dentro do peso ideal.</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Preencha os dados</h2>
+
+      <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Ex.: 70" />
+      </div>
+
+      <div class="form-group">
+        <label for="altura">Altura (m):</label>
+        <input type="number" step="0.01" id="altura" placeholder="Ex.: 1.75" />
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularIMC()">Calcular</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/imc.js"></script>
+</body>
+</html>
