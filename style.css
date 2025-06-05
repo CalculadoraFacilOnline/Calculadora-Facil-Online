@@ -1,224 +1,265 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-  background-color: #004aad;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 2rem;
 }
 
 header h1 {
-  margin: 0;
+    margin: 0;
 }
 
 main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
 }
 
+/* Estilização para a nova seção de introdução */
+.introducao-site {
+    background-color: #eef7ff; /* Um azul bem clarinho para destacar */
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem; /* Espaçamento entre a introdução e o h2 das calculadoras */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6; /* Melhora a legibilidade */
+    text-align: center; /* Centraliza o texto de introdução */
+}
+
+.introducao-site p {
+    margin-bottom: 1rem; /* Espaço entre os parágrafos da introdução */
+}
+
+.introducao-site p:last-child {
+    margin-bottom: 0; /* Remove margem do último parágrafo */
+}
+
+
 .calculadoras h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
-.botao-porcentagem {
-  text-align: center;
 
+.botao-porcentagem {
+    text-align: center;
 }
+
 .card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-  margin-top: 0;
-  color: #004aad;
+    margin-top: 0;
+    color: #004aad;
 }
 
 footer {
-  background-color: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }
+
+footer a { /* Estilização para os novos links no rodapé */
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #004aad;
+    text-decoration: underline;
+}
+
+/* Os estilos para calculadora individual e botões (display, botoes, btn-voltar)
+   não são relevantes para a página index.html, mas mantive-os no CSS
+   pois fazem parte do seu arquivo completo. */
 .container {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
 }
 
 .container h2 {
-  text-align: center;
-  color: #004aad;
-  margin-bottom: 1.5rem;
+    text-align: center;
+    color: #004aad;
+    margin-bottom: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 input, select {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 button {
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #00337a;
+    background-color: #00337a;
 }
 
 .resultado {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-  color: #004aad;
-  font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #004aad;
+    font-weight: bold;
 }
 .display {
-  width: 100%;
-  margin-bottom: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .display input {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  text-align: right;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: right;
+    box-sizing: border-box;
 }
 
 .botoes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
 .botoes button {
-  padding: 1rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #004aad;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #004aad;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .botoes button:hover {
-  background-color: #00337a;
-  transform: translateY(-2px);
+    background-color: #00337a;
+    transform: translateY(-2px);
 }
 
 .botoes button.igual {
-  grid-row: span 2;
-  background-color: #007c3d;
+    grid-row: span 2;
+    background-color: #007c3d;
 }
 
 .botoes button.igual:hover {
-  background-color: #005d2e;
+    background-color: #005d2e;
 }
 
 .botoes button.zero {
-  grid-column: span 2;
+    grid-column: span 2;
 }
 #btn-voltar {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  z-index: 1000;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
 }
 
 #btn-voltar:hover {
-  background-color: #00337a;
-  transform: translateY(-2px);
+    background-color: #00337a;
+    transform: translateY(-2px);
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+    /* Esta regra de grid está duplicada, mas foi mantida para garantir.
+       A media query mais abaixo ajustará para mobile. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .grid .anuncio.full-span {
-  grid-column: 1 / -1;
-  background-color: #fff8d4;
-  border: 2px solid #e1b100;
-  border-radius: 10px;
-  color: #8e44ad;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 15px;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    grid-column: 1 / -1;
+    background-color: #fff8d4;
+    border: 2px solid #e1b100;
+    border-radius: 10px;
+    color: #8e44ad; /* Cor original do texto no anúncio */
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .grid .anuncio.full-span:hover {
-  background-color: #ffe58a;
-  color: #5e3370;
-  border-color: #d4a000;
-  box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
+    background-color: #ffe58a;
+    color: #5e3370; /* Cor ao passar o mouse */
+    border-color: #d4a000;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
 }
 
 .grid .anuncio.full-span a {
-  color: #5e3370;
-  text-decoration: underline;
-  font-weight: 600;
+    color: #5e3370; /* Cor do link no anúncio */
+    text-decoration: underline;
+    font-weight: 600;
 }
+
+/* Anúncio Lateral - Não é exibido na página principal do seu HTML, mas mantido. */
 .anuncio-lateral {
     position: fixed;
     right: 20px;
@@ -231,6 +272,7 @@ button:hover {
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
     font-family: 'Calibri', sans-serif;
+    z-index: 999; /* Garante que fique acima de outros elementos se sobrepostos */
 }
 
 .anuncio-lateral h3 {
@@ -270,63 +312,70 @@ button:hover {
 .fechar-anuncio:hover {
     color: #005d2e;
 }
+
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
     /* Cabeçalho */
     header {
-        padding: 1.5rem 1rem; /* Reduz o padding para dar mais espaço ao texto */
-        /* Centraliza o texto do cabeçalho caso ainda não esteja */
+        padding: 1.5rem 1rem;
         text-align: center;
     }
 
     header h1 {
-        font-size: 1.8rem; /* Reduz o tamanho da fonte do h1 */
-        word-wrap: break-word; /* Garante que o texto quebre para a próxima linha se for muito longo */
-        white-space: normal; /* Permite a quebra de linha normal */
+        font-size: 1.8rem;
+        word-wrap: break-word;
+        white-space: normal;
     }
 
     header p {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte do parágrafo */
-        word-wrap: break-word; /* Garante que o texto quebre para a próxima linha */
+        font-size: 0.9rem;
+        word-wrap: break-word;
         white-space: normal;
     }
 
     /* Título H2 "Escolha uma calculadora" */
     .calculadoras h2 {
-        text-align: center; /* Garante que esteja centralizado */
-        margin-bottom: 1.5rem; /* Ajusta o espaçamento */
-        font-size: 1.6rem; /* Reduz o tamanho da fonte para não ocupar tanto espaço */
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
     }
 
     /* Grid de calculadoras */
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Permite que os cards fiquem menores em telas muito pequenas */
-        gap: 1rem; /* Reduz o espaçamento entre os cards */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
     }
 
     /* Card de Anúncio */
     .grid .anuncio.full-span {
-        grid-column: 1 / -1; /* Mantém ele ocupando a largura total (importante para quebrar a linha) */
-        padding: 1rem; /* Reduz o padding interno */
-        font-size: 1rem; /* Reduz o tamanho da fonte */
+        grid-column: 1 / -1;
+        padding: 1rem;
+        font-size: 1rem;
     }
 
     .grid .anuncio.full-span p {
-        margin: 0.5rem 0; /* Ajusta a margem dos parágrafos dentro do anúncio */
+        margin: 0.5rem 0;
     }
 
     .grid .anuncio.full-span a {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte do link */
-        word-wrap: break-word; /* Garante que o email quebre a linha */
+        font-size: 0.9rem;
+        word-wrap: break-word;
         white-space: normal;
     }
 
     /* Ajustes gerais de padding para o main */
     main {
-        padding: 1rem; /* Reduz o padding nas laterais em telas pequenas */
+        padding: 1rem;
+    }
+
+    /* Estilização da introdução em telas menores */
+    .introducao-site {
+        padding: 1rem 1rem; /* Reduz padding */
+        font-size: 0.95rem; /* Ajusta tamanho da fonte */
     }
 }
 
-/* Opcional: Para telas ainda menores (ex: iPhone SE, etc.) */
+/* Para telas ainda menores (ex: iPhone SE, etc.) */
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5rem;
@@ -343,12 +392,15 @@ button:hover {
     .card {
         padding: 1rem;
     }
+    .introducao-site {
+        padding: 0.8rem 0.8rem; /* Ainda mais compacto */
+        font-size: 0.9rem;
+    }
 }
 
-/* Opcional: Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
+/* Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .grid {
-        /* Permite 2 ou 3 colunas dependendo do espaço, ajustando o minmax */
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.2rem;
     }
