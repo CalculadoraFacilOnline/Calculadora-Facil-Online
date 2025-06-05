@@ -1,105 +1,407 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
 
-  <title>Calculadoras Online - Finanças, Saúde, Matemática e Mais</title>
-  <meta name="description" content="Calculadoras online gratuitas, rápidas e fáceis. IMC, juros compostos, financiamento, porcentagem, gestacional e muito mais.">
-  <meta name="keywords" content="calculadora online, IMC, juros compostos, financiamento, porcentagem, gravidez, gestacional, saúde, matemática">
-  <meta name="author" content="Calculadora Fácil Online">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+header {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Calculadoras Online - Finanças, Saúde, Matemática e Mais">
-  <meta property="og:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e muito mais. Simples, rápido e gratuito.">
-  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
-  <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online">
-  <meta property="og:site_name" content="Calculadora Fácil Online">
+header h1 {
+    margin: 0;
+}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Calculadoras Online - Finanças, Saúde, Matemática e Mais">
-  <meta name="twitter:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e mais. Simples, rápido e gratuito.">
-  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
 
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Calculadora Fácil Online",
-    "url": "https://calculadorafacilonline.github.io/calculadoras-online",
-    "description": "Calculadoras online gratuitas para finanças, saúde, gestação, matemática e mais.",
-    "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Calculadora Fácil Online",
-      "url": "https://calculadorafacilonline.github.io",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
-      }
+/* Estilização para a nova seção de introdução */
+.introducao-site {
+    background-color: #eef7ff; /* Um azul bem clarinho para destacar */
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem; /* Espaçamento entre a introdução e o h2 das calculadoras */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6; /* Melhora a legibilidade */
+    text-align: center; /* Centraliza o texto de introdução */
+}
+
+.introducao-site p {
+    margin-bottom: 1rem; /* Espaço entre os parágrafos da introdução */
+}
+
+.introducao-site p:last-child {
+    margin-bottom: 0; /* Remove margem do último parágrafo */
+}
+
+
+.calculadoras h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.botao-porcentagem {
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #004aad;
+}
+
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a { /* Estilização para os novos links no rodapé */
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #004aad;
+    text-decoration: underline;
+}
+
+/* Os estilos para calculadora individual e botões (display, botoes, btn-voltar)
+   não são relevantes para a página index.html, mas mantive-os no CSS
+   pois fazem parte do seu arquivo completo. */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+.container h2 {
+    text-align: center;
+    color: #004aad;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00337a;
+}
+
+.resultado {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #004aad;
+    font-weight: bold;
+}
+.display {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.display input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.botoes button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #004aad;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botoes button:hover {
+    background-color: #00337a;
+    transform: translateY(-2px);
+}
+
+.botoes button.igual {
+    grid-row: span 2;
+    background-color: #007c3d;
+}
+
+.botoes button.igual:hover {
+    background-color: #005d2e;
+}
+
+.botoes button.zero {
+    grid-column: span 2;
+}
+#btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+#btn-voltar:hover {
+    background-color: #00337a;
+    transform: translateY(-2px);
+}
+.grid {
+    /* Esta regra de grid está duplicada, mas foi mantida para garantir.
+       A media query mais abaixo ajustará para mobile. */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid .anuncio.full-span {
+    grid-column: 1 / -1;
+    background-color: #fff8d4;
+    border: 2px solid #e1b100;
+    border-radius: 10px;
+    color: #8e44ad; /* Cor original do texto no anúncio */
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid .anuncio.full-span:hover {
+    background-color: #ffe58a;
+    color: #5e3370; /* Cor ao passar o mouse */
+    border-color: #d4a000;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
+}
+
+.grid .anuncio.full-span a {
+    color: #5e3370; /* Cor do link no anúncio */
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Anúncio Lateral - Não é exibido na página principal do seu HTML, mas mantido. */
+.anuncio-lateral {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 300px;
+    background-color: #f4f4f4;
+    border: 2px solid #007c3d; /* Verde Excel */
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
+    font-family: 'Calibri', sans-serif;
+    z-index: 999; /* Garante que fique acima de outros elementos se sobrepostos */
+}
+
+.anuncio-lateral h3 {
+    color: #007c3d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.anuncio-lateral .botao {
+    display: block;
+    background-color: #007c3d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.anuncio-lateral .botao:hover {
+    background-color: #005d2e;
+}
+
+/* Botão de Fechar */
+.fechar-anuncio {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007c3d;
+    cursor: pointer;
+}
+.fechar-anuncio:hover {
+    color: #005d2e;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    /* Cabeçalho */
+    header {
+        padding: 1.5rem 1rem;
+        text-align: center;
     }
-  }
-  </script>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+    header h1 {
+        font-size: 1.8rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
 
-<body>
-  <header>
-    <h1>Calculadoras Online</h1>
-    <p>Ferramentas gratuitas para facilitar sua vida. Simples, rápidas e sempre disponíveis.</p>
-  </header>
+    header p {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
 
-  <main>
-    <section class="calculadoras">
-      <h2>Escolha uma calculadora</h2>
-      <div class="grid">
+    /* Título H2 "Escolha uma calculadora" */
+    .calculadoras h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+    }
 
-        <a href="calculadora-imc.html" class="card">
-          <h3>Calculadora de IMC</h3>
-          <p>Descubra seu Índice de Massa Corporal</p>
-        </a>
+    /* Grid de calculadoras */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
 
-        <a href="calculadora-juros-compostos.html" class="card">
-          <h3>Calculadora de Juros Compostos</h3>
-          <p>Simule rendimentos e investimentos</p>
-        </a>
+    /* Card de Anúncio */
+    .grid .anuncio.full-span {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 
-        <a href="calculadora-financiamento.html" class="card">
-          <h3>Calculadora de Financiamento</h3>
-          <p>Simule parcelas de financiamentos</p>
-        </a>
+    .grid .anuncio.full-span p {
+        margin: 0.5rem 0;
+    }
 
-            <div class="card anuncio full-span">
-    <p><strong>Anuncie aqui!</strong></p>
-    <p>Contato: <a href="mailto:calculadorafacilonline@gmail.com">calculadorafacilonline@gmail.com</a></p>
-  </div>
+    .grid .anuncio.full-span a {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
 
-        <a href="calculadora-porcentagem.html" class="card">
-          <h3>Calculadora de Porcentagem</h3>
-          <p>Calcule descontos, acréscimos e proporções</p>
-        </a>
+    /* Ajustes gerais de padding para o main */
+    main {
+        padding: 1rem;
+    }
 
-        <a href="calculadora-gestacional.html" class="card">
-          <h3>Calculadora Gestacional</h3>
-          <p>Saiba semanas de gestação e a data provável do parto</p>
-        </a>
+    /* Estilização da introdução em telas menores */
+    .introducao-site {
+        padding: 1rem 1rem; /* Reduz padding */
+        font-size: 0.95rem; /* Ajusta tamanho da fonte */
+    }
+}
 
-        <a href="calculadora-padrao.html" class="card">
-          <h3>Calculadora Padrão</h3>
-          <p>Realize cálculos simples e rápidos</p>
-        </a>
+/* Para telas ainda menores (ex: iPhone SE, etc.) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.8rem;
+    }
+    .calculadoras h2 {
+        font-size: 1.4rem;
+    }
+    .grid {
+        grid-template-columns: 1fr; /* Força os cards a empilharem verticalmente em telas muito pequenas */
+    }
+    .card {
+        padding: 1rem;
+    }
+    .introducao-site {
+        padding: 0.8rem 0.8rem; /* Ainda mais compacto */
+        font-size: 0.9rem;
+    }
+}
 
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 <strong>Calculadora Fácil Online</strong>. Todos os direitos reservados.</p>
-  </footer>
-</body>
-</html>
+/* Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
+}
