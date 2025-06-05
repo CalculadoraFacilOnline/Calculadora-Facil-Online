@@ -270,3 +270,86 @@ button:hover {
 .fechar-anuncio:hover {
     color: #005d2e;
 }
+@media (max-width: 768px) {
+    /* Cabeçalho */
+    header {
+        padding: 1.5rem 1rem; /* Reduz o padding para dar mais espaço ao texto */
+        /* Centraliza o texto do cabeçalho caso ainda não esteja */
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Reduz o tamanho da fonte do h1 */
+        word-wrap: break-word; /* Garante que o texto quebre para a próxima linha se for muito longo */
+        white-space: normal; /* Permite a quebra de linha normal */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do parágrafo */
+        word-wrap: break-word; /* Garante que o texto quebre para a próxima linha */
+        white-space: normal;
+    }
+
+    /* Título H2 "Escolha uma calculadora" */
+    .calculadoras h2 {
+        text-align: center; /* Garante que esteja centralizado */
+        margin-bottom: 1.5rem; /* Ajusta o espaçamento */
+        font-size: 1.6rem; /* Reduz o tamanho da fonte para não ocupar tanto espaço */
+    }
+
+    /* Grid de calculadoras */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Permite que os cards fiquem menores em telas muito pequenas */
+        gap: 1rem; /* Reduz o espaçamento entre os cards */
+    }
+
+    /* Card de Anúncio */
+    .grid .anuncio.full-span {
+        grid-column: 1 / -1; /* Mantém ele ocupando a largura total (importante para quebrar a linha) */
+        padding: 1rem; /* Reduz o padding interno */
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .grid .anuncio.full-span p {
+        margin: 0.5rem 0; /* Ajusta a margem dos parágrafos dentro do anúncio */
+    }
+
+    .grid .anuncio.full-span a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte do link */
+        word-wrap: break-word; /* Garante que o email quebre a linha */
+        white-space: normal;
+    }
+
+    /* Ajustes gerais de padding para o main */
+    main {
+        padding: 1rem; /* Reduz o padding nas laterais em telas pequenas */
+    }
+}
+
+/* Opcional: Para telas ainda menores (ex: iPhone SE, etc.) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.8rem;
+    }
+    .calculadoras h2 {
+        font-size: 1.4rem;
+    }
+    .grid {
+        grid-template-columns: 1fr; /* Força os cards a empilharem verticalmente em telas muito pequenas */
+    }
+    .card {
+        padding: 1rem;
+    }
+}
+
+/* Opcional: Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        /* Permite 2 ou 3 colunas dependendo do espaço, ajustando o minmax */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
+}
