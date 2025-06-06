@@ -10,7 +10,6 @@
   <meta name="author" content="Calculadora Fácil Online" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Calculadora de IMC - Calcule seu Índice de Massa Corporal Online" />
   <meta property="og:description" content="Calcule seu IMC e descubra se está dentro do peso ideal com nossa calculadora online gratuita." />
@@ -18,13 +17,11 @@
   <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-imc.html" />
   <meta property="og:site_name" content="Calculadora Fácil Online" />
 
-  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calculadora de IMC - Calcule seu Índice de Massa Corporal Online" />
   <meta name="twitter:description" content="Calcule seu IMC e saiba se está dentro do peso ideal com nossa calculadora online gratuita." />
   <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png" />
 
-  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,6 +71,78 @@
       </div>
 
       <p id="resultado" class="resultado"></p>
+    </section>
+
+    <section class="content-explanation">
+      <h2>O Que É o Índice de Massa Corporal (IMC)?</h2>
+      <p>O Índice de Massa Corporal (IMC) é uma medida internacional simples usada para avaliar se uma pessoa está com um peso saudável em relação à sua altura. Ele é amplamente utilizado por profissionais de saúde para indicar possíveis riscos relacionados ao peso.</p>
+
+      <h2>Como o IMC é Calculado?</h2>
+      <p>O cálculo do IMC é bem simples: você divide o seu peso (em quilogramas) pela sua altura (em metros) elevada ao quadrado. A fórmula é a seguinte:</p>
+      $$ \text{IMC} = \frac{\text{Peso (kg)}}{\text{Altura (m)}^2} $$
+      <p>Por exemplo, se você pesa 70 kg e tem 1,75 m de altura, o cálculo seria: $ \text{IMC} = \frac{70}{(1.75 \times 1.75)} = \frac{70}{3.0625} \approx 22.86 $.</p>
+
+      <h2>Interprete o Resultado do Seu IMC: Tabela de Classificação</h2>
+      <p>Após calcular seu IMC, compare o resultado com a tabela abaixo para saber em qual categoria de peso você se encaixa:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>IMC (kg/m²)</th>
+            <th>Classificação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="IMC (kg/m²)">Menor que 18,5</td>
+            <td data-label="Classificação">Abaixo do peso</td>
+          </tr>
+          <tr>
+            <td data-label="IMC (kg/m²)">Entre 18,5 e 24,9</td>
+            <td data-label="Classificação">Peso normal</td>
+          </tr>
+          <tr>
+            <td data-label="IMC (kg/m²)">Entre 25,0 e 29,9</td>
+            <td data-label="Classificação">Sobrepeso</td>
+          </tr>
+          <tr>
+            <td data-label="IMC (kg/m²)">Entre 30,0 e 34,9</td>
+            <td data-label="Classificação">Obesidade Grau I</td>
+          </tr>
+          <tr>
+            <td data-label="IMC (kg/m²)">Entre 35,0 e 39,9</td>
+            <td data-label="Classificação">Obesidade Grau II (Severa)</td>
+          </tr>
+          <tr>
+            <td data-label="IMC (kg/m²)">Igual ou maior que 40,0</td>
+            <td data-label="Classificação">Obesidade Grau III (Mórbida)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Lembre-se que essa tabela é um guia. Para uma avaliação completa, consulte um profissional de saúde.</p>
+
+      <h2>Importância e Limitações do IMC</h2>
+      <p>O IMC é uma ferramenta útil para uma avaliação inicial do peso, mas possui algumas limitações importantes:</p>
+      <ul>
+        <li>**Não diferencia massa gorda de massa magra:** Atletas com muita massa muscular podem ter um IMC elevado sem estarem com sobrepeso.</li>
+        <li>**Não considera a distribuição de gordura:** A gordura abdominal, por exemplo, é mais prejudicial à saúde, e o IMC não a avalia.</li>
+        <li>**Variações individuais:** O IMC pode não ser igualmente preciso para crianças, idosos e gestantes.</li>
+      </ul>
+      <p>Portanto, use o IMC como um indicador geral e procure sempre a orientação de um profissional de saúde para uma avaliação personalizada da sua saúde e peso.</p>
+
+      <h2>Complemente Sua Análise de Saúde com a TMB</h2>
+      <p>Para uma visão mais completa sobre suas necessidades calóricas e como seu corpo funciona em repouso, recomendamos que você também utilize nossa **<a href="calculadora-tmb.html">Calculadora de TMB (Taxa Metabólica Basal)</a>**.</p>
+      <p>A TMB é o gasto calórico mínimo do seu corpo para manter as funções vitais, e entender esse valor é essencial para planejar dietas e rotinas de exercícios de forma eficaz.</p>
+      <p>Descubra quantas calorias seu corpo queima em repouso e dê um passo a mais no entendimento de sua saúde e metabolismo!</p>
+
+      <h2>Perguntas Frequentes (FAQ) sobre o IMC</h2>
+      <div class="faq">
+        <h3>O que devo fazer se meu IMC estiver fora do peso normal?</h3>
+        <p>Se o seu IMC estiver fora da faixa de peso normal, é altamente recomendado procurar um profissional de saúde, como um médico ou nutricionista. Eles podem realizar uma avaliação completa, considerando outros fatores de saúde, e indicar o melhor caminho para você.</p>
+        <h3>O IMC é o único indicador de saúde?</h3>
+        <p>Não, o IMC é apenas um dos vários indicadores de saúde. Outros fatores importantes incluem seu histórico familiar, exames de sangue, hábitos de vida (alimentação, exercícios físicos, sono) e a circunferência da sua cintura. Uma avaliação completa deve considerar todos esses aspectos.</p>
+      </div>
+
+      <p class="cta-bottom">Pronto para calcular seu IMC? Use nossa ferramenta no topo da página!</p>
     </section>
   </main>
 
