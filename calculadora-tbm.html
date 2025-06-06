@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Calculadora de TMB (Taxa Metabólica Basal) Online Grátis</title>
+  <meta name="description" content="Use nossa calculadora de TMB gratuita para estimar a quantidade de calorias que seu corpo queima em repouso. Essencial para planejamento de dieta e exercícios." />
+  <meta name="keywords" content="calculadora de TMB, taxa metabólica basal, calorias em repouso, gasto calórico, metabolismo, dieta, emagrecimento, ganho de peso, saúde online" />
+  <meta name="author" content="Calculadora Fácil Online" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora de TMB (Taxa Metabólica Basal) Online Grátis" />
+  <meta property="og:description" content="Calcule sua TMB e entenda quantas calorias seu corpo precisa em repouso com nossa ferramenta online gratuita." />
+  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-tmb.png" /> <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-tmb.html" />
+  <meta property="og:site_name" content="Calculadora Fácil Online" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Calculadora de TMB (Taxa Metabólica Basal) Online Grátis" />
+  <meta name="twitter:description" content="Estime sua TMB e descubra suas necessidades calóricas diárias com nossa calculadora online gratuita." />
+  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-tmb.png" /> <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calculadora de TMB (Taxa Metabólica Basal) Online",
+    "url": "https://calculadorafacilonline.github.io/calculadoras-online/calculadora-tmb.html",
+    "description": "Calculadora de TMB online gratuita. Estime a quantidade de calorias que seu corpo queima em repouso usando a fórmula de Mifflin-St Jeor.",
+    "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-tmb.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Calculadora Fácil Online",
+      "url": "https://calculadorafacilonline.github.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
+    <h1>Calculadora de TMB (Taxa Metabólica Basal)</h1>
+    <p>Estime a quantidade mínima de calorias que seu corpo precisa para funcionar em repouso.</p>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Calcule Sua TMB Agora</h2>
+
+      <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <select id="sexo">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Ex.: 70" />
+      </div>
+
+      <div class="form-group">
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" placeholder="Ex.: 175" />
+      </div>
+
+      <div class="form-group">
+        <label for="idade">Idade (anos):</label>
+        <input type="number" id="idade" placeholder="Ex.: 30" />
+      </div>
+
+      <div class="botao-porcentagem">
+        <button onclick="calcularTMB()">Calcular TMB</button>
+      </div>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+
+    <section class="content-explanation">
+      ---
+      <h2>O Que É a Taxa Metabólica Basal (TMB)?</h2>
+      <p>A <strong>Taxa Metabólica Basal (TMB)</strong> representa a quantidade mínima de calorias que seu corpo precisa para realizar as funções vitais básicas enquanto está em repouso absoluto. Isso inclui atividades como respirar, manter a temperatura corporal, bombear sangue e as funções dos órgãos. É, em essência, o combustível que seu corpo queima para se manter vivo.</p>
+
+      ---
+      <h2>Para Que Serve a TMB?</h2>
+      <p>Conhecer sua TMB é o primeiro passo crucial para qualquer pessoa que busca entender seu gasto calórico diário e, consequentemente, planejar metas de peso:</p>
+      <ul>
+        <li><strong>Emagrecimento:</strong> Para perder peso, você precisa consumir menos calorias do que gasta (déficit calórico). A TMB é a base para calcular seu gasto total.</li>
+        <li><strong>Ganho de Peso:</strong> Para ganhar peso, você precisa consumir mais calorias do que gasta (superávit calórico).</li>
+        <li><strong>Manutenção de Peso:</strong> Para manter o peso atual, o objetivo é consumir uma quantidade de calorias próxima ao seu gasto total.</li>
+        <li><strong>Consciência Nutricional:</strong> Ajuda a entender as necessidades energéticas do seu corpo e a tomar decisões alimentares mais informadas.</li>
+      </ul>
+
+      ---
+      <h2>Como a TMB é Calculada: Fórmula de Mifflin-St Jeor</h2>
+      <p>Nossa calculadora utiliza a **Fórmula de Mifflin-St Jeor**, que é amplamente reconhecida como uma das mais precisas para estimar a TMB. A fórmula é:</p>
+      <ul>
+        <li><strong>Para Homens:</strong> $ \text{TMB} = (10 \times \text{Peso em kg}) + (6.25 \times \text{Altura em cm}) - (5 \times \text{Idade em anos}) + 5 $</li>
+        <li><strong>Para Mulheres:</strong> $ \text{TMB} = (10 \times \text{Peso em kg}) + (6.25 \times \text{Altura em cm}) - (5 \times \text{Idade em anos}) - 161 $</li>
+      </ul>
+      <p>Note que a altura é inserida em centímetros para esta fórmula.</p>
+
+      ---
+      <h2>TMB vs. Gasto Calórico Total Diário (GCD)</h2>
+      <p>É importante diferenciar a TMB do seu **Gasto Calórico Total Diário (GCD)**. A TMB é apenas o mínimo. O GCD inclui a TMB mais as calorias gastas em atividades físicas e o efeito térmico dos alimentos (calorias gastas na digestão).</p>
+      <p>Para obter seu GCD, você geralmente multiplica sua TMB por um fator de atividade física:</p>
+      <ul>
+        <li>**Sedentário (pouco ou nenhum exercício):** TMB x 1.2</li>
+        <li>**Levemente Ativo (exercício leve 1-3 dias/semana):** TMB x 1.375</li>
+        <li>**Moderadamente Ativo (exercício moderado 3-5 dias/semana):** TMB x 1.55</li>
+        <li>**Muito Ativo (exercício pesado 6-7 dias/semana):** TMB x 1.725</li>
+        <li>**Extremamente Ativo (exercício muito pesado, treino duas vezes ao dia):** TMB x 1.9</li>
+      </ul>
+      <p>Para uma calculadora mais completa que inclua a TMB e o fator de atividade física, você pode conferir nossa <a href="link-para-calculadora-gasto-calorico-total.html">Calculadora de Gasto Calórico Diário Total</a>.</p>
+
+      ---
+      <h2>Limitações da Calculadora de TMB</h2>
+      <p>Embora a Fórmula de Mifflin-St Jeor seja precisa para a maioria das pessoas, ela ainda é uma estimativa. Fatores como composição corporal (massa muscular vs. gordura), genética, condições de saúde e até mesmo clima podem influenciar seu metabolismo. Para uma avaliação mais exata e um plano personalizado, consulte um nutricionista ou profissional de saúde.</p>
+
+      <p class="cta-bottom">Use nossa <strong>Calculadora de TMB</strong> no topo da página e comece a entender melhor as necessidades calóricas do seu corpo!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Calculadora Fácil Online. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="tmb.js"></script>
+</body>
+</html>
