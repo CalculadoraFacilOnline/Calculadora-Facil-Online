@@ -13,13 +13,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Calculadora Padrão Online - Cálculos Básicos e Avançados" />
   <meta property="og:description" content="Faça operações básicas, calcule raiz quadrada e potência com nossa calculadora padrão online e gratuita." />
-  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" /> <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-padrao.html" />
+  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" />
+  <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-padrao.html" />
   <meta property="og:site_name" content="Calculadora Fácil Online" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calculadora Padrão Online - Cálculos Básicos e Avançados" />
   <meta name="twitter:description" content="Sua calculadora online para operações básicas, raiz quadrada e potência. Simples e fácil de usar!" />
-  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" /> <script type="application/ld+json">
+  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" />
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -55,29 +57,27 @@
       </div>
 
       <div class="botoes">
-        <button onclick="limpar()">C</button>
-        <button onclick="adicionar('/')">÷</button>
-        <button onclick="adicionar('*')">×</button>
-        <button onclick="apagar()">⌫</button>
-
-        <button onclick="adicionar('7')">7</button>
+        <button class="clear" onclick="limpar()">C</button>
+        <button class="operador" onclick="adicionar('/')">÷</button>
+        <button class="operador" onclick="adicionar('*')">×</button>
+        <button class="funcao-especial" onclick="apagar()">⌫</button> <button onclick="adicionar('7')">7</button>
         <button onclick="adicionar('8')">8</button>
         <button onclick="adicionar('9')">9</button>
-        <button onclick="adicionar('-')">−</button>
+        <button class="operador" onclick="adicionar('-')">−</button>
 
         <button onclick="adicionar('4')">4</button>
         <button onclick="adicionar('5')">5</button>
         <button onclick="adicionar('6')">6</button>
-        <button onclick="adicionar('+')">+</button>
+        <button class="operador" onclick="adicionar('+')">+</button>
 
         <button onclick="adicionar('1')">1</button>
         <button onclick="adicionar('2')">2</button>
         <button onclick="adicionar('3')">3</button>
-        <button onclick="raizQuadrada()">√</button>
+        <button class="funcao-especial" onclick="raizQuadrada()">√</button>
 
         <button class="zero" onclick="adicionar('0')">0</button>
         <button onclick="adicionar('.')">.</button>
-        <button onclick="potencia()">x<sup>y</sup></button>
+        <button class="funcao-especial" onclick="potencia()">x<sup>y</sup></button>
         <button class="igual" onclick="calcular()">=</button>
       </div>
     </section>
