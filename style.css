@@ -1,521 +1,586 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333; /* Cor padrão do texto */
+  background-color: #f4f7f6; /* Fundo suave para todo o site */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
 }
 
+/* --- 2. Layout Geral (Header, Main, Footer) --- */
+/*
+   Estilos para o cabeçalho, a área de conteúdo principal e o rodapé.
+   Definem cores, alinhamento e espaçamento que serão comuns em todas as páginas.
+*/
 header {
-    background-color: #004aad;
-    color: white;
-    text-align: center;
-    padding: 2rem;
+  background-color: #2c3e50; /* Azul escuro, consistente com os títulos das calculadoras */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative; /* Necessário para posicionar o botão "Voltar" */
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem;
+header p {
+  margin-top: 5px;
+  font-size: 1.1rem;
+  opacity: 0.9; /* Deixa o parágrafo um pouco mais suave */
 }
 
-/* Estilização para a nova seção de introdução */
-.introducao-site {
-    background-color: #eef7ff; /* Um azul bem clarinho para destacar */
-    padding: 1.5rem 2rem;
-    margin-bottom: 2rem; /* Espaçamento entre a introdução e o h2 das calculadoras */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    line-height: 1.6; /* Melhora a legibilidade */
-    text-align: center; /* Centraliza o texto de introdução */
-}
-
-.introducao-site p {
-    margin-bottom: 1rem; /* Espaço entre os parágrafos da introdução */
-}
-
-.introducao-site p:last-child {
-    margin-bottom: 0; /* Remove margem do último parágrafo */
-}
-
-
-.calculadoras h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.botao-porcentagem {
-    text-align: center;
-}
-
-.card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-    margin-top: 0;
-    color: #004aad;
-}
-
-footer {
-    background-color: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-footer a { /* Estilização para os novos links no rodapé */
-    color: #fff;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #004aad;
-    text-decoration: underline;
-}
-
-/* Os estilos para calculadora individual e botões (display, botoes, btn-voltar)
-   não são relevantes para a página index.html, mas mantive-os no CSS
-   pois fazem parte do seu arquivo completo. */
-.container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: auto;
-}
-
-.container h2 {
-    text-align: center;
-    color: #004aad;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-input, select {
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #00337a;
-}
-
-.resultado {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    color: #004aad;
-    font-weight: bold;
-}
-.display {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.display input {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    text-align: right;
-    box-sizing: border-box;
-}
-
-.botoes {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-.botoes button {
-    padding: 1rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #004aad;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.botoes button:hover {
-    background-color: #00337a;
-    transform: translateY(-2px);
-}
-
-.botoes button.igual {
-    grid-row: span 2;
-    background-color: #007c3d;
-}
-
-.botoes button.igual:hover {
-    background-color: #005d2e;
-}
-
-.botoes button.zero {
-    grid-column: span 2;
-}
+/* Botão "Voltar" que aparece no header das calculadoras */
 #btn-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    z-index: 1000;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3498db; /* Azul vibrante, consistente com os botões */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 #btn-voltar:hover {
-    background-color: #00337a;
-    transform: translateY(-2px);
-}
-.grid {
-    /* Esta regra de grid está duplicada, mas foi mantida para garantir.
-       A media query mais abaixo ajustará para mobile. */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  background-color: #2980b9;
 }
 
+main {
+  flex-grow: 1; /* Faz o main ocupar o espaço restante, empurrando o footer */
+  max-width: 1200px; /* Largura máxima para o conteúdo principal */
+  margin: auto; /* Centraliza o main */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens verticalmente dentro do main */
+}
+
+footer {
+  background-color: #34495e; /* Azul cinzento, escuro para o rodapé */
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto; /* Garante que o rodapé fique no final da página */
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #3498db; /* Cor de hover consistente com os links do cabeçalho */
+  text-decoration: underline;
+}
+
+/* --- 3. Estilos da Página Inicial (`index.html`) --- */
+/*
+   Regras específicas para a página que lista suas calculadoras,
+   incluindo a seção de introdução e o layout em grid dos cards.
+*/
+.introducao-site {
+  background-color: #eef7ff; /* Um azul bem clarinho para destacar */
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.introducao-site p {
+  margin-bottom: 1rem;
+}
+
+.introducao-site p:last-child {
+  margin-bottom: 0;
+}
+
+.calculadoras h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50; /* Cor consistente com os títulos */
+  font-size: 2rem; /* Tamanho para o título principal da seção */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo para 250px mínimo */
+  gap: 1.5rem;
+  width: 100%; /* Garante que o grid ocupe a largura disponível */
+  max-width: 900px; /* Limita a largura do grid de cards */
+  margin: 0 auto; /* Centraliza o grid */
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2c3e50; /* Cor consistente com os títulos */
+}
+
+/* Anúncio Full-Span (se aplicável ao index.html) */
 .grid .anuncio.full-span {
-    grid-column: 1 / -1;
-    background-color: #fff8d4;
-    border: 2px solid #e1b100;
-    border-radius: 10px;
-    color: #8e44ad; /* Cor original do texto no anúncio */
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  grid-column: 1 / -1;
+  background-color: #fff8d4;
+  border: 2px solid #e1b100;
+  border-radius: 10px;
+  color: #8e44ad; /* Cor original do texto no anúncio */
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .grid .anuncio.full-span:hover {
-    background-color: #ffe58a;
-    color: #5e3370; /* Cor ao passar o mouse */
-    border-color: #d4a000;
-    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
+  background-color: #ffe58a;
+  color: #5e3370;
+  border-color: #d4a000;
+  box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
 }
 
 .grid .anuncio.full-span a {
-    color: #5e3370; /* Cor do link no anúncio */
-    text-decoration: underline;
-    font-weight: 600;
+  color: #5e3370;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
-/* Anúncio Lateral - Não é exibido na página principal do seu HTML, mas mantido. */
+/* Anúncio Lateral (se você usá-lo em alguma página) */
 .anuncio-lateral {
-    position: fixed;
-    right: 20px;
-    top: 100px;
-    width: 300px;
-    background-color: #f4f4f4;
-    border: 2px solid #007c3d; /* Verde Excel */
-    border-radius: 5px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
-    font-family: 'Calibri', sans-serif;
-    z-index: 999; /* Garante que fique acima de outros elementos se sobrepostos */
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 300px;
+  background-color: #f4f4f4;
+  border: 2px solid #007c3d;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
+  font-family: 'Calibri', sans-serif;
+  z-index: 999;
 }
 
 .anuncio-lateral h3 {
-    color: #007c3d;
-    font-weight: bold;
-    margin-bottom: 10px;
+  color: #007c3d;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .anuncio-lateral .botao {
-    display: block;
-    background-color: #007c3d;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+  display: block;
+  background-color: #007c3d;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .anuncio-lateral .botao:hover {
-    background-color: #005d2e;
+  background-color: #005d2e;
 }
 
-/* Botão de Fechar */
 .fechar-anuncio {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #007c3d;
-    cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007c3d;
+  cursor: pointer;
 }
 .fechar-anuncio:hover {
-    color: #005d2e;
+  color: #005d2e;
 }
 
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-    /* Cabeçalho */
-    header {
-        padding: 1.5rem 1rem;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    header p {
-        font-size: 0.9rem;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    /* Título H2 "Escolha uma calculadora" */
-    .calculadoras h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.6rem;
-    }
-
-    /* Grid de calculadoras */
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-    }
-
-    /* Card de Anúncio */
-    .grid .anuncio.full-span {
-        grid-column: 1 / -1;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-
-    .grid .anuncio.full-span p {
-        margin: 0.5rem 0;
-    }
-
-    .grid .anuncio.full-span a {
-        font-size: 0.9rem;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    /* Ajustes gerais de padding para o main */
-    main {
-        padding: 1rem;
-    }
-
-    /* Estilização da introdução em telas menores */
-    .introducao-site {
-        padding: 1rem 1rem; /* Reduz padding */
-        font-size: 0.95rem; /* Ajusta tamanho da fonte */
-    }
+/* --- 4. Estilos Comuns de Calculadoras Individuais --- */
+/*
+   Estilos que se aplicam ao contêiner principal da calculadora (a caixa branca),
+   elementos de formulário (rótulos, inputs) e botões de ação (Calcular).
+   São compartilhados entre as páginas de IMC, TMB, Padrão, etc.
+*/
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px; /* Largura padrão para as calculadoras */
+  margin-bottom: 30px; /* Espaço abaixo da calculadora */
+  box-sizing: border-box;
 }
 
-/* Para telas ainda menores (ex: iPhone SE, etc.) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    header p {
-        font-size: 0.8rem;
-    }
-    .calculadoras h2 {
-        font-size: 1.4rem;
-    }
-    .grid {
-        grid-template-columns: 1fr; /* Força os cards a empilharem verticalmente em telas muito pequenas */
-    }
-    .card {
-        padding: 1rem;
-    }
-    .introducao-site {
-        padding: 0.8rem 0.8rem; /* Ainda mais compacto */
-        font-size: 0.9rem;
-    }
+.container h2 {
+  text-align: center;
+  color: #2c3e50; /* Cor consistente com os títulos */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
 }
 
-/* Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.2rem;
-    }
+.form-group {
+  margin-bottom: 1.5rem;
 }
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"], /* Adicionado para o display da calculadora padrão */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Botões gerais de ação (ex: "Calcular" no IMC/TMB) */
+.botao-porcentagem {
+  text-align: center; /* Centraliza o botão dentro da div */
+}
+
+.botao-porcentagem button {
+  background-color: #3498db; /* Azul vibrante */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.botao-porcentagem button:hover {
+  background-color: #2980b9;
+}
+
+.resultado {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* --- 5. Estilos Específicos da Calculadora de IMC (`calculadora-imc.html`) --- */
+/*
+   Estes são os estilos para a seção de texto explicativo e a tabela do IMC.
+   São projetados para garantir boa leitura e organização.
+*/
 .content-explanation {
-  background-color: #ffffff; /* Fundo branco para o conteúdo */
-  padding: 30px; /* Espaçamento interno generoso */
-  margin: 30px auto; /* Margem para separar da calculadora e centralizar */
-  border-radius: 8px; /* Cantos arredondados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
-  max-width: 800px; /* Limita a largura para melhor legibilidade em telas grandes */
-  line-height: 1.6; /* Espaçamento entre linhas para facilitar a leitura */
-  color: #333; /* Cor de texto mais escura para contraste */
-  font-size: 1rem; /* Tamanho de fonte base */
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1rem;
 }
 
-/* --- Estilos para os Títulos dentro do Conteúdo --- */
 .content-explanation h2 {
-  font-size: 1.8rem; /* Tamanho maior para títulos principais */
-  color: #2c3e50; /* Cor escura para destaque */
-  margin-top: 40px; /* Espaçamento antes de cada novo H2 */
-  margin-bottom: 15px; /* Espaçamento depois do H2 */
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 15px;
   border-bottom: 2px solid #e0e0e0; /* Linha sutil para separar seções */
-  padding-bottom: 10px; /* Espaçamento entre texto e linha */
+  padding-bottom: 10px;
 }
 
 .content-explanation h3 {
-  font-size: 1.4rem; /* Tamanho para subtítulos */
-  color: #34495e; /* Uma cor um pouco mais clara que o h2 */
+  font-size: 1.4rem;
+  color: #34495e;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
-/* --- Estilos para Parágrafos --- */
 .content-explanation p {
-  margin-bottom: 1em; /* Espaçamento entre parágrafos */
-  text-align: justify; /* Justifica o texto para um visual mais limpo */
+  margin-bottom: 1em;
+  text-align: justify; /* Justifica o texto para um visual limpo */
 }
 
-/* --- Estilos para Listas (UL, OL) --- */
 .content-explanation ul,
 .content-explanation ol {
   margin-bottom: 1em;
-  padding-left: 25px; /* Recuo para os itens da lista */
+  padding-left: 25px;
 }
 
 .content-explanation ul li,
 .content-explanation ol li {
-  margin-bottom: 0.5em; /* Espaçamento entre itens da lista */
+  margin-bottom: 0.5em;
 }
 
-/* --- Estilos para Tabelas --- */
 .content-explanation table {
-  width: 100%; /* Tabela ocupa toda a largura disponível */
-  border-collapse: collapse; /* Remove espaçamento entre bordas de células */
-  margin: 20px 0; /* Espaçamento antes e depois da tabela */
-  font-size: 0.95rem; /* Fonte um pouco menor para tabelas */
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95rem;
 }
 
 .content-explanation table th,
 .content-explanation table td {
-  border: 1px solid #ddd; /* Bordas para as células */
-  padding: 10px; /* Espaçamento interno das células */
-  text-align: left; /* Alinha texto à esquerda */
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
 }
 
 .content-explanation table th {
-  background-color: #f2f2f2; /* Fundo cinza para cabeçalhos */
-  font-weight: bold; /* Negrito para cabeçalhos */
+  background-color: #f2f2f2;
+  font-weight: bold;
   color: #555;
 }
 
-/* --- Estilos para Links --- */
 .content-explanation a {
-  color: #007bff; /* Cor padrão de link (azul) */
-  text-decoration: none; /* Remove sublinhado padrão */
+  color: #007bff;
+  text-decoration: none;
 }
 
 .content-explanation a:hover {
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  text-decoration: underline;
 }
 
-/* --- Estilos para a Seção FAQ --- */
 .content-explanation .faq {
   margin-top: 30px;
-  border-top: 1px solid #eee; /* Linha de separação acima do FAQ */
+  border-top: 1px solid #eee;
   padding-top: 20px;
 }
 
 .content-explanation .faq h3 {
-  font-size: 1.2rem; /* Tamanho do título da pergunta */
+  font-size: 1.2rem;
   color: #444;
   margin-bottom: 5px;
 }
 
 .content-explanation .faq p {
-  margin-bottom: 15px; /* Espaço após a resposta */
-  text-align: left; /* Mantém o alinhamento esquerdo para o FAQ */
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-/* --- Estilo para a Chamada para Ação inferior (CTA) --- */
 .content-explanation .cta-bottom {
-  text-align: center; /* Centraliza o CTA */
-  margin-top: 40px; /* Mais espaço acima */
+  text-align: center;
+  margin-top: 40px;
   font-size: 1.1rem;
   font-weight: bold;
   color: #2c3e50;
   padding: 15px;
-  background-color: #eaf6ff; /* Fundo levemente azul para destaque */
+  background-color: #eaf6ff;
   border-radius: 5px;
 }
 
+/* --- 6. Estilos Específicos da Calculadora Padrão (`calculadora-padrao.html`) --- */
+/*
+   Estes estilos são dedicados à interface da calculadora padrão:
+   o display e o grid de botões, incluindo as cores dos operadores.
+*/
+.display {
+  margin-bottom: 20px;
+}
 
-/* --- Responsividade Básica (para telas menores) --- */
+#display { /* O input do display da calculadora padrão */
+  width: calc(100% - 20px); /* Garante que o padding não estoure a largura */
+  padding: 15px 10px;
+  font-size: 2em; /* Tamanho grande para o resultado */
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ecf0f1; /* Fundo claro para o display */
+  color: #333;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra interna para profundidade */
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.botoes button {
+  background-color: #ecf0f1; /* Fundo cinza claro para botões numéricos */
+  color: #333;
+  border: none;
+  padding: 20px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botoes button:hover {
+  background-color: #dbe4e6;
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.botoes button:active {
+  background-color: #cdd6d8;
+  transform: translateY(0); /* Efeito de "pressionar" */
+}
+
+/* Estilos específicos para operadores e funções especiais da calculadora padrão */
+.botoes button:nth-child(4n+1), /* 1º botão de cada linha (C, 7, 4, 1, 0) */
+.botoes button:nth-child(2),   /* Botão de divisão */
+.botoes button:nth-child(3),   /* Botão de multiplicação */
+.botoes button:nth-child(8),   /* Botão de subtração */
+.botoes button:nth-child(12),  /* Botão de adição */
+.botoes button:nth-child(16),  /* Botão de raiz quadrada */
+.botoes button:nth-child(19)   /* Botão de potência */
+{
+  background-color: #3498db; /* Azul consistente com os outros botões de ação */
+  color: white;
+}
+
+.botoes button:nth-child(4n+1):hover,
+.botoes button:nth-child(2):hover,
+.botoes button:nth-child(3):hover,
+.botoes button:nth-child(8):hover,
+.botoes button:nth-child(12):hover,
+.botoes button:nth-child(16):hover,
+.botoes button:nth-child(19):hover
+{
+  background-color: #2980b9;
+}
+
+.botoes .igual {
+  background-color: #2ecc71; /* Verde para o botão de igual */
+  color: white;
+  grid-column: span 2; /* Ocupa 2 colunas */
+}
+
+.botoes .igual:hover {
+  background-color: #27ae60;
+}
+
+.botoes .zero {
+  grid-column: span 2; /* Ocupa 2 colunas */
+}
+
+/* --- 7. Responsividade (Media Queries) --- */
+/*
+   Essas regras adaptam o layout do seu site para diferentes tamanhos de tela,
+   garantindo que ele seja visualmente agradável em dispositivos móveis.
+*/
+
+/* Para telas menores (até 768px - smartphones e tablets pequenos) */
 @media (max-width: 768px) {
+  /* Cabeçalho */
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    word-wrap: break-word; /* Quebra palavras longas */
+    white-space: normal;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  /* Botão de voltar */
+  #btn-voltar {
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Main */
+  main {
+    padding: 1rem;
+  }
+
+  /* Seção de introdução (index.html) */
+  .introducao-site {
+    padding: 1rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Título da seção de calculadoras (index.html) */
+  .calculadoras h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Grid de calculadoras (index.html) */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Card de anúncio (index.html) */
+  .grid .anuncio.full-span {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .grid .anuncio.full-span p {
+    margin: 0.5rem 0;
+  }
+
+  .grid .anuncio.full-span a {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  /* Contêiner da calculadora (IMC, Padrão, TMB) */
+  .container {
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 90%; /* Pode expandir para ocupar melhor a tela em mobile */
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Botões da calculadora padrão */
+  .botoes button {
+    padding: 15px;
+    font-size: 1.2em;
+  }
+
+  /* Seção de conteúdo explicativo (IMC, Padrão, TMB) */
   .content-explanation {
     padding: 20px;
     margin: 20px auto;
@@ -530,40 +595,36 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  /* Faz a tabela se comportar como blocos em mobile */
+  /* Tabelas responsivas dentro do conteúdo explicativo */
   .content-explanation table,
   .content-explanation table thead,
   .content-explanation table tbody,
   .content-explanation table th,
   .content-explanation table td,
   .content-explanation table tr {
-    display: block;
+    display: block; /* Força os elementos da tabela a se comportarem como blocos */
   }
 
-  /* Esconde o cabeçalho original da tabela em mobile */
   .content-explanation table thead tr {
-    position: absolute;
+    position: absolute; /* Esconde o cabeçalho em mobile */
     top: -9999px;
     left: -9999px;
   }
 
-  /* Adiciona borda e margem para cada linha da tabela em mobile */
   .content-explanation table tr {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
 
-  /* Estiliza cada célula da tabela em mobile */
   .content-explanation table td {
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
-    padding-left: 50%; /* Espaço para o data-label */
-    text-align: right; /* Alinha o valor à direita */
+    padding-left: 50%; /* Abre espaço para o label */
+    text-align: right;
   }
 
-  /* Exibe o data-label (cabeçalho) antes do conteúdo da célula em mobile */
   .content-explanation table td:before {
     position: absolute;
     left: 6px;
@@ -572,6 +633,37 @@ button:hover {
     white-space: nowrap;
     text-align: left;
     font-weight: bold;
-    content: attr(data-label); /* Pega o valor do atributo data-label */
+    content: attr(data-label); /* Exibe o data-label como "cabeçalho" da célula */
+  }
+}
+
+/* Para telas muito pequenas (até 480px - celulares antigos ou modos compactos) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 0.8rem;
+  }
+  .calculadoras h2 {
+    font-size: 1.4rem;
+  }
+  .grid {
+    grid-template-columns: 1fr; /* Força os cards a empilharem verticalmente */
+  }
+  .card {
+    padding: 1rem;
+  }
+  .introducao-site {
+    padding: 0.8rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Para tablets e laptops (entre 769px e 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
   }
 }
