@@ -1,90 +1,135 @@
-const display = document.getElementById('display');
-const operadores = ['+', '-', '×', '÷'];
-let emErro = false;
-
-display.addEventListener('keydown', function(event) {
-  const tecla = event.key;
-
-  if (emErro) {
-    if (tecla !== 'Enter' && tecla !== 'Backspace' && tecla !== 'Delete') {
-      limpar();
-      emErro = false;
-    }
-    if (tecla === 'Backspace' || tecla === 'Delete') {
-      event.preventDefault();
-      return;
-    }
-  }
-
-  const teclasPermitidas = ['0','1','2','3','4','5','6','7','8','9',
-                            '+','-','*','/','.','Backspace','Delete','ArrowLeft','ArrowRight','Enter'];
-
-  if (tecla === 'Enter') {
-    event.preventDefault();
-    calcular();
-    return;
-  }
-
-  if (tecla === '*') {
-    event.preventDefault();
-    adicionar('×');
-    return;
-  }
-
-  if (tecla === '/') {
-    event.preventDefault();
-    adicionar('÷');
-    return;
-  }
-
-  if (!teclasPermitidas.includes(tecla)) {
-    event.preventDefault();
-  }
-});
+let display = document.getElementById('display');
+let currentInput = '';
+let operator = '';
+let firstOperand = null;
+let waitingForSecondOperand = false;
 
 function adicionar(valor) {
-  if (emErro) {
-    limpar();
-    emErro = false;
-  }
-
-  const ultimoChar = display.value.slice(-1);
-
-  if (operadores.includes(valor) && display.value === '') return;
-
-  if (operadores.includes(valor) && operadores.includes(ultimoChar)) {
-    display.value = display.value.slice(0, -1) + valor;
+  if (waitingForSecondOperand) {
+    currentInput = valor;
+    waitingForSecondOperand = false;
   } else {
-    display.value += valor;
+    currentInput += valor;
   }
+  display.value = currentInput;
 }
 
 function limpar() {
+  currentInput = '';
+  operator = '';
+  firstOperand = null;
+  waitingForSecondOperand = false;
   display.value = '';
-  emErro = false;
 }
 
 function apagar() {
-  if (emErro) return;
-  display.value = display.value.slice(0, -1);
+  currentInput = currentInput.slice(0, -1);
+  display.value = currentInput;
 }
 
 function calcular() {
-  try {
-    const ultimoChar = display.value.slice(-1);
-    if (operadores.includes(ultimoChar)) {
-      display.value = 'Erro';
-      emErro = true;
-      return;
-    }
-    let expressao = display.value.replace(/×/g, '*').replace(/÷/g, '/');
-    display.value = eval(expressao);
-    emErro = false;
-  } catch {
-    display.value = 'Erro';
-    emErro = true;
+  if (currentInput === '' && operator !== '') {
+    // Permite calcular o mesmo valor com o operador anterior se nada for digitado
+    currentInput = firstOperand;
   }
+  
+  if (currentInput === '' || operator === '') {
+    return; // Não faz nada se não houver números ou operador
+  }
+
+  const secondOperand = parseFloat(currentInput);
+  let resultado;
+
+  switch (operator) {
+    case '+':
+      resultado = firstOperand + secondOperand;
+      break;
+    case '-':
+      resultado = firstOperand - secondOperand;
+      break;
+    case '*':
+      resultado = firstOperand * secondOperand;
+      break;
+    case '/':
+      if (secondOperand === 0) {
+        alert("Divisão por zero não é permitida!");
+        limpar();
+        return;
+      }
+      resultado = firstOperand / secondOperand;
+      break;
+    case '^': // Operador para potência
+      resultado = Math.pow(firstOperand, secondOperand);
+      break;
+    default:
+      return;
+  }
+
+  display.value = resultado;
+  currentInput = resultado.toString();
+  firstOperand = resultado;
+  operator = ''; // Reseta o operador após o cálculo
+  waitingForSecondOperand = true; // Prepara para um novo cálculo ou continuação
 }
+
+function handleOperator(nextOperator) {
+  const inputValue = parseFloat(currentInput);
+
+  if (firstOperand === null) {
+    firstOperand = inputValue;
+  } else if (operator) { // Se já tem um operador, calcula o anterior
+    calcular();
+    firstOperand = parseFloat(display.value); // Atualiza firstOperand com o resultado
+  }
+
+  waitingForSecondOperand = true;
+  operator = nextOperator;
+}
+
+
+// --- Novas Funções de Raiz e Potência ---
+
+function raizQuadrada() {
+  const valor = parseFloat(currentInput);
+  if (isNaN(valor) || valor < 0) {
+    display.value = 'Erro';
+    currentInput = '';
+    return;
+  }
+  const resultado = Math.sqrt(valor);
+  display.value = resultado;
+  currentInput = resultado.toString();
+  firstOperand = resultado;
+  waitingForSecondOperand = true;
+}
+
+function potencia() {
+
+  handleOperator('^'); 
+  display.value = currentInput + '^'; 
+}
+
 function voltar() {
   window.history.back();
 }
+
+
+// Event listener para permitir input do teclado (opcional, mas bom para UX)
+document.addEventListener('keydown', function(event) {
+  const key = event.key;
+
+  if (/[0-9]/.test(key)) { // Números
+    adicionar(key);
+  } else if (key === '.') { // Ponto decimal
+    adicionar('.');
+  } else if (key === '+' || key === '-' || key === '*' || key === '/') { // Operadores
+ 
+    adicionar(key);
+  } else if (key === 'Enter') { // Enter para calcular
+    calcular();
+  } else if (key === 'Backspace') { // Backspace para apagar
+    apagar();
+  } else if (key === 'Escape') { // Esc para limpar
+    limpar();
+  }
+});
