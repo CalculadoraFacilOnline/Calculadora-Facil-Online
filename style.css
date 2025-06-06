@@ -405,3 +405,173 @@ button:hover {
         gap: 1.2rem;
     }
 }
+.content-explanation {
+  background-color: #ffffff; /* Fundo branco para o conteúdo */
+  padding: 30px; /* Espaçamento interno generoso */
+  margin: 30px auto; /* Margem para separar da calculadora e centralizar */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+  max-width: 800px; /* Limita a largura para melhor legibilidade em telas grandes */
+  line-height: 1.6; /* Espaçamento entre linhas para facilitar a leitura */
+  color: #333; /* Cor de texto mais escura para contraste */
+  font-size: 1rem; /* Tamanho de fonte base */
+}
+
+/* --- Estilos para os Títulos dentro do Conteúdo --- */
+.content-explanation h2 {
+  font-size: 1.8rem; /* Tamanho maior para títulos principais */
+  color: #2c3e50; /* Cor escura para destaque */
+  margin-top: 40px; /* Espaçamento antes de cada novo H2 */
+  margin-bottom: 15px; /* Espaçamento depois do H2 */
+  border-bottom: 2px solid #e0e0e0; /* Linha sutil para separar seções */
+  padding-bottom: 10px; /* Espaçamento entre texto e linha */
+}
+
+.content-explanation h3 {
+  font-size: 1.4rem; /* Tamanho para subtítulos */
+  color: #34495e; /* Uma cor um pouco mais clara que o h2 */
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* --- Estilos para Parágrafos --- */
+.content-explanation p {
+  margin-bottom: 1em; /* Espaçamento entre parágrafos */
+  text-align: justify; /* Justifica o texto para um visual mais limpo */
+}
+
+/* --- Estilos para Listas (UL, OL) --- */
+.content-explanation ul,
+.content-explanation ol {
+  margin-bottom: 1em;
+  padding-left: 25px; /* Recuo para os itens da lista */
+}
+
+.content-explanation ul li,
+.content-explanation ol li {
+  margin-bottom: 0.5em; /* Espaçamento entre itens da lista */
+}
+
+/* --- Estilos para Tabelas --- */
+.content-explanation table {
+  width: 100%; /* Tabela ocupa toda a largura disponível */
+  border-collapse: collapse; /* Remove espaçamento entre bordas de células */
+  margin: 20px 0; /* Espaçamento antes e depois da tabela */
+  font-size: 0.95rem; /* Fonte um pouco menor para tabelas */
+}
+
+.content-explanation table th,
+.content-explanation table td {
+  border: 1px solid #ddd; /* Bordas para as células */
+  padding: 10px; /* Espaçamento interno das células */
+  text-align: left; /* Alinha texto à esquerda */
+}
+
+.content-explanation table th {
+  background-color: #f2f2f2; /* Fundo cinza para cabeçalhos */
+  font-weight: bold; /* Negrito para cabeçalhos */
+  color: #555;
+}
+
+/* --- Estilos para Links --- */
+.content-explanation a {
+  color: #007bff; /* Cor padrão de link (azul) */
+  text-decoration: none; /* Remove sublinhado padrão */
+}
+
+.content-explanation a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* --- Estilos para a Seção FAQ --- */
+.content-explanation .faq {
+  margin-top: 30px;
+  border-top: 1px solid #eee; /* Linha de separação acima do FAQ */
+  padding-top: 20px;
+}
+
+.content-explanation .faq h3 {
+  font-size: 1.2rem; /* Tamanho do título da pergunta */
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.content-explanation .faq p {
+  margin-bottom: 15px; /* Espaço após a resposta */
+  text-align: left; /* Mantém o alinhamento esquerdo para o FAQ */
+}
+
+/* --- Estilo para a Chamada para Ação inferior (CTA) --- */
+.content-explanation .cta-bottom {
+  text-align: center; /* Centraliza o CTA */
+  margin-top: 40px; /* Mais espaço acima */
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 15px;
+  background-color: #eaf6ff; /* Fundo levemente azul para destaque */
+  border-radius: 5px;
+}
+
+
+/* --- Responsividade Básica (para telas menores) --- */
+@media (max-width: 768px) {
+  .content-explanation {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .content-explanation h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+
+  .content-explanation h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Faz a tabela se comportar como blocos em mobile */
+  .content-explanation table,
+  .content-explanation table thead,
+  .content-explanation table tbody,
+  .content-explanation table th,
+  .content-explanation table td,
+  .content-explanation table tr {
+    display: block;
+  }
+
+  /* Esconde o cabeçalho original da tabela em mobile */
+  .content-explanation table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Adiciona borda e margem para cada linha da tabela em mobile */
+  .content-explanation table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  /* Estiliza cada célula da tabela em mobile */
+  .content-explanation table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; /* Espaço para o data-label */
+    text-align: right; /* Alinha o valor à direita */
+  }
+
+  /* Exibe o data-label (cabeçalho) antes do conteúdo da célula em mobile */
+  .content-explanation table td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-label); /* Pega o valor do atributo data-label */
+  }
+}
