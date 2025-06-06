@@ -1,9 +1,3 @@
-/* --- 1. Estilos Globais e Reset --- */
-/*
-   Esses estilos definem o visual base para todo o site.
-   Eles garantem que o rodapé fique sempre na parte inferior da página,
-   e padronizam a fonte e as cores de texto.
-*/
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -683,4 +677,123 @@ select {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.2rem;
     }
+}
+
+Fontes
+
+
+
+
+
+Gemini o 1 , 2 e 3 estão azuis mas o 4,5,6,7,8,9 está de outra cor, que eu gostei mais, poderia mudar a cor do 1, 2 e 3 ?
+
+
+Pelo que entendi, você está falando dos botões da calculadora padrão, onde os números 1, 2, 3 estão azuis, mas os números 4, 5, 6, 7, 8, 9 (e o 0) estão de uma cor que você preferiu (provavelmente um cinza claro).
+
+Para mudar a cor dos botões 1, 2 e 3 para a mesma cor dos botões 4, 5, 6, 7, 8, 9, precisamos remover esses botões de uma regra de estilo específica que os está tornando azuis.
+
+Onde e Por Que Isso Acontece:
+No seu CSS atual, dentro da seção "Estilos Específicos da Calculadora Padrão", você tem uma regra que agrupa alguns botões (incluindo o 1, 2 e 3) e os deixa azuis:
+
+CSS
+
+.botoes button:nth-child(4n+1), /* 1º botão de cada linha (C, 7, 4, 1, 0) */
+.botoes button:nth-child(2),   /* Botão de divisão */
+.botoes button:nth-child(3),   /* Botão de multiplicação */
+.botoes button:nth-child(8),   /* Botão de subtração */
+.botoes button:nth-child(12),  /* Botão de adição */
+.botoes button:nth-child(16),  /* Botão de raiz quadrada */
+.botoes button:nth-child(19)   /* Botão de potência */
+{
+  background-color: #3498db; /* Azul consistente com os outros botões de ação */
+  color: white;
+}
+A parte que está causando isso é .botoes button:nth-child(4n+1). Essa regra seleciona o 1º botão de cada 4 botões na grade, o que inclui o C (clear), o 7, o 4, o 1 e o 0.
+
+Como Corrigir:
+Para resolver, precisamos remover as menções aos botões 1, 2 e 3 (e também ao 0, 4, 7 e C se você quiser que eles também sejam cinzas) dessa regra de estilo e da regra de :hover correspondente.
+
+Se você quer que TODOS os números (0-9) e o ponto (.) sejam cinza, e apenas os operadores e funções especiais (C, /, *, -, +, Raiz, Potência, Igual) sejam azuis, a maneira mais fácil é redefinir a regra.
+
+Código CSS Corrigido para a Calculadora Padrão:
+Você pode substituir a seção inteira "Estilos Específicos da Calculadora Padrão" no seu style.css pelo código abaixo.
+
+CSS
+
+/* --- 6. Estilos Específicos da Calculadora Padrão (`calculadora-padrao.html`) --- */
+/*
+   Estes estilos são dedicados à interface da calculadora padrão:
+   o display e o grid de botões, incluindo as cores dos operadores.
+*/
+.display {
+    margin-bottom: 20px;
+}
+
+#display { /* O input do display da calculadora padrão */
+    width: calc(100% - 20px); /* Garante que o padding não estoure a largura */
+    padding: 15px 10px;
+    font-size: 2em; /* Tamanho grande para o resultado */
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ecf0f1; /* Fundo claro para o display */
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra interna para profundidade */
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.botoes button {
+    background-color: #ecf0f1; /* Fundo cinza claro para botões numéricos (padrão) */
+    color: #333;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botoes button:hover {
+    background-color: #dbe4e6;
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.botoes button:active {
+    background-color: #cdd6d8;
+    transform: translateY(0); /* Efeito de "pressionar" */
+}
+
+/* Estilos específicos para operadores e funções especiais da calculadora padrão */
+/* Selecionamos especificamente os operadores para que apenas eles sejam azuis */
+.botoes button.operador, /* Classe adicionada aos botões de operação */
+.botoes button.funcao-especial, /* Classe adicionada para C, raiz, potência */
+.botoes button.clear { /* Se você tiver um botão de limpar */
+  background-color: #3498db; /* Azul consistente com os outros botões de ação */
+  color: white;
+}
+
+.botoes button.operador:hover,
+.botoes button.funcao-especial:hover,
+.botoes button.clear:hover {
+  background-color: #2980b9;
+}
+
+.botoes .igual {
+    background-color: #2ecc71; /* Verde para o botão de igual */
+    color: white;
+    grid-column: span 2; /* Ocupa 2 colunas */
+}
+
+.botoes .igual:hover {
+    background-color: #27ae60;
+}
+
+.botoes .zero {
+    grid-column: span 2; /* Ocupa 2 colunas */
 }
