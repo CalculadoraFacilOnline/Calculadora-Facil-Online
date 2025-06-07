@@ -153,9 +153,7 @@ function potencia() {
 function updateDisplay() {
     const displayElement = document.getElementById('display');
     if (displayElement) {
-        // Se currentEquation não está vazia, mostra-a antes do displayValue
-        // Isso pode exigir um CSS para uma fonte menor ou um segundo input no HTML para a equação
-        // Por enquanto, vamos concatenar no mesmo input para simplificar
+
         if (currentEquation && currentEquation.endsWith(' =')) {
              // Se já calculou, mostra só o resultado e o que foi calculado
              displayElement.value = displayValue; // Só o resultado no display principal
