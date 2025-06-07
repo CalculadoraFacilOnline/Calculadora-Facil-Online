@@ -1,6 +1,4 @@
-Claro! Aqui está o código JavaScript completo, ajustado e funcional para a sua calculadora padrão, sem comentários:
 
-JavaScript
 
 let displayValue = '';
 let operator = null;
