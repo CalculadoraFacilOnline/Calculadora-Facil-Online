@@ -1,135 +1,125 @@
-let display = document.getElementById('display');
-let currentInput = '';
-let operator = '';
+Claro! Aqui está o código JavaScript completo, ajustado e funcional para a sua calculadora padrão, sem comentários:
+
+JavaScript
+
+let displayValue = '';
+let operator = null;
 let firstOperand = null;
 let waitingForSecondOperand = false;
 
-function adicionar(valor) {
-  if (waitingForSecondOperand) {
-    currentInput = valor;
-    waitingForSecondOperand = false;
-  } else {
-    currentInput += valor;
-  }
-  display.value = currentInput;
-}
-
-function limpar() {
-  currentInput = '';
-  operator = '';
-  firstOperand = null;
-  waitingForSecondOperand = false;
-  display.value = '';
-}
-
-function apagar() {
-  currentInput = currentInput.slice(0, -1);
-  display.value = currentInput;
-}
-
-function calcular() {
-  if (currentInput === '' && operator !== '') {
-    // Permite calcular o mesmo valor com o operador anterior se nada for digitado
-    currentInput = firstOperand;
-  }
-  
-  if (currentInput === '' || operator === '') {
-    return; // Não faz nada se não houver números ou operador
-  }
-
-  const secondOperand = parseFloat(currentInput);
-  let resultado;
-
-  switch (operator) {
-    case '+':
-      resultado = firstOperand + secondOperand;
-      break;
-    case '-':
-      resultado = firstOperand - secondOperand;
-      break;
-    case '*':
-      resultado = firstOperand * secondOperand;
-      break;
-    case '/':
-      if (secondOperand === 0) {
-        alert("Divisão por zero não é permitida!");
-        limpar();
-        return;
-      }
-      resultado = firstOperand / secondOperand;
-      break;
-    case '^': // Operador para potência
-      resultado = Math.pow(firstOperand, secondOperand);
-      break;
-    default:
-      return;
-  }
-
-  display.value = resultado;
-  currentInput = resultado.toString();
-  firstOperand = resultado;
-  operator = ''; // Reseta o operador após o cálculo
-  waitingForSecondOperand = true; // Prepara para um novo cálculo ou continuação
+function adicionar(num) {
+    if (waitingForSecondOperand) {
+        displayValue = num;
+        waitingForSecondOperand = false;
+    } else {
+        displayValue = displayValue === '0' ? num : displayValue + num;
+    }
+    updateDisplay();
 }
 
 function handleOperator(nextOperator) {
-  const inputValue = parseFloat(currentInput);
+    const inputValue = parseFloat(displayValue);
 
-  if (firstOperand === null) {
-    firstOperand = inputValue;
-  } else if (operator) { // Se já tem um operador, calcula o anterior
-    calcular();
-    firstOperand = parseFloat(display.value); // Atualiza firstOperand com o resultado
-  }
+    if (operator && waitingForSecondOperand) {
+        operator = nextOperator;
+        return;
+    }
 
-  waitingForSecondOperand = true;
-  operator = nextOperator;
+    if (firstOperand === null) {
+        firstOperand = inputValue;
+    } else if (operator) {
+        const result = executarCalculo(firstOperand, inputValue, operator);
+        displayValue = String(result);
+        firstOperand = result;
+    }
+
+    waitingForSecondOperand = true;
+    operator = nextOperator;
+    updateDisplay();
 }
 
+function calcular() {
+    if (operator === null || waitingForSecondOperand) {
+        return;
+    }
 
-// --- Novas Funções de Raiz e Potência ---
+    const secondOperand = parseFloat(displayValue);
+    const result = executarCalculo(firstOperand, secondOperand, operator);
+
+    displayValue = String(result);
+    firstOperand = null;
+    operator = null;
+    waitingForSecondOperand = false;
+    updateDisplay();
+}
+
+function executarCalculo(first, second, op) {
+    switch (op) {
+        case '+':
+            return first + second;
+        case '-':
+            return first - second;
+        case '*':
+            return first * second;
+        case '/':
+            return second === 0 ? 'Erro' : first / second;
+        default:
+            return second;
+    }
+}
+
+function limpar() {
+    displayValue = '0';
+    operator = null;
+    firstOperand = null;
+    waitingForSecondOperand = false;
+    updateDisplay();
+}
+
+function apagar() {
+    displayValue = displayValue.slice(0, -1);
+    if (displayValue === '') {
+        displayValue = '0';
+    }
+    updateDisplay();
+}
 
 function raizQuadrada() {
-  const valor = parseFloat(currentInput);
-  if (isNaN(valor) || valor < 0) {
-    display.value = 'Erro';
-    currentInput = '';
-    return;
-  }
-  const resultado = Math.sqrt(valor);
-  display.value = resultado;
-  currentInput = resultado.toString();
-  firstOperand = resultado;
-  waitingForSecondOperand = true;
+    const inputValue = parseFloat(displayValue);
+    if (inputValue < 0) {
+        displayValue = 'Erro';
+    } else {
+        displayValue = String(Math.sqrt(inputValue));
+    }
+    firstOperand = null;
+    operator = null;
+    waitingForSecondOperand = false;
+    updateDisplay();
 }
 
 function potencia() {
-
-  handleOperator('^'); 
-  display.value = currentInput + '^'; 
+    const inputValue = parseFloat(displayValue);
+    if (firstOperand === null) {
+        firstOperand = inputValue;
+        operator = 'potencia';
+        waitingForSecondOperand = true;
+        displayValue = ''; 
+    } else {
+        const result = Math.pow(firstOperand, inputValue);
+        displayValue = String(result);
+        firstOperand = null;
+        operator = null;
+        waitingForSecondOperand = false;
+    }
+    updateDisplay();
 }
+
+function updateDisplay() {
+    document.getElementById('display').value = displayValue;
+}
+
+document.addEventListener('DOMContentLoaded', updateDisplay);
 
 function voltar() {
-  window.history.back();
+    window.history.back();
 }
-
-
-// Event listener para permitir input do teclado (opcional, mas bom para UX)
-document.addEventListener('keydown', function(event) {
-  const key = event.key;
-
-  if (/[0-9]/.test(key)) { // Números
-    adicionar(key);
-  } else if (key === '.') { // Ponto decimal
-    adicionar('.');
-  } else if (key === '+' || key === '-' || key === '*' || key === '/') { // Operadores
- 
-    adicionar(key);
-  } else if (key === 'Enter') { // Enter para calcular
-    calcular();
-  } else if (key === 'Backspace') { // Backspace para apagar
-    apagar();
-  } else if (key === 'Escape') { // Esc para limpar
-    limpar();
-  }
-});
