@@ -39,9 +39,10 @@ body {
 @media (max-width: 480px) {
   body {
     font-size: 16px;
+    padding: 0 10px;
   }
 
   .card {
-    padding: 12px;
+    padding: 10px;
   }
 }
