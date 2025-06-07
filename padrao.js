@@ -1,20 +1,19 @@
-let displayValue = '0'; // Valor atual exibido no display principal
-let currentEquation = ''; // Para armazenar a equação completa (ex: "5 + 3")
+let displayValue = '0';
+let currentEquation = '';
 let operator = null;
 let firstOperand = null;
-let waitingForSecondOperand = false; // Flag para saber se estamos esperando o segundo operando
+let waitingForSecondOperand = false;
 
 function adicionar(num) {
     if (waitingForSecondOperand) {
-        displayValue = num; // Começa um novo número para o segundo operando
+        displayValue = num;
         waitingForSecondOperand = false;
     } else {
-        // Evita múltiplos zeros no início e ponto decimal duplicado
         if (num === '.' && displayValue.includes('.')) {
             return;
         }
         if (displayValue === '0' && num !== '.') {
-            displayValue = num; // Substitui o zero inicial por outro número
+            displayValue = num;
         } else {
             displayValue += num;
         }
@@ -25,29 +24,32 @@ function adicionar(num) {
 function handleOperator(nextOperator) {
     const inputValue = parseFloat(displayValue);
 
-    if (firstOperand === null) {
-        // Se é o primeiro número e operador
+    if (operator && waitingForSecondOperand) {
+        operator = nextOperator;
+        if (currentEquation.length > 0) {
+            currentEquation = currentEquation.slice(0, currentEquation.lastIndexOf(' ')) + ' ' + nextOperator + ' ';
+        } else {
+             currentEquation = firstOperand + ' ' + nextOperator + ' ';
+        }
+    } else if (firstOperand === null) {
         firstOperand = inputValue;
+        operator = nextOperator;
         currentEquation = displayValue + ' ' + nextOperator + ' ';
-    } else if (operator && !waitingForSecondOperand) {
-        // Se já tem um primeiro operando e operador, e o display não está vazio (não esperando o segundo)
-        const result = executarCalculo(firstOperand, inputValue, operator);
-        displayValue = String(result); // Mostra o resultado parcial no display
-        firstOperand = result; // O resultado parcial se torna o novo primeiro operando
-        currentEquation = displayValue + ' ' + nextOperator + ' '; // Atualiza a equação com o resultado parcial
     } else {
-        // Troca de operador antes de digitar o segundo número
-        currentEquation = currentEquation.slice(0, -2) + nextOperator + ' '; // Remove o operador antigo e adiciona o novo
+        const result = executarCalculo(firstOperand, inputValue, operator);
+        displayValue = String(result);
+        firstOperand = result;
+        operator = nextOperator;
+        currentEquation += inputValue + ' ' + nextOperator + ' ';
     }
 
     waitingForSecondOperand = true;
-    operator = nextOperator;
-    updateDisplay(); // Atualiza o display principal
+    updateDisplay();
 }
 
 function calcular() {
     if (operator === null || waitingForSecondOperand || firstOperand === null) {
-        return; // Não faz nada se não houver operação pendente
+        return;
     }
 
     const secondOperand = parseFloat(displayValue);
@@ -55,22 +57,19 @@ function calcular() {
 
     if (operator === 'potencia') {
         result = Math.pow(firstOperand, secondOperand);
+        currentEquation += secondOperand + ' =';
     } else {
         result = executarCalculo(firstOperand, secondOperand, operator);
+        currentEquation += displayValue + ' =';
     }
 
-    // Adiciona a parte final da equação antes de mostrar o resultado
-    currentEquation += displayValue + ' =';
-    displayValue = String(result); // O resultado final vai para o display principal
+    displayValue = String(result);
 
-    // Reseta para o próximo cálculo
     firstOperand = null;
     operator = null;
-    waitingForSecondOperand = false;
-
-    updateDisplay(); // Atualiza o display
-    // Poderíamos limpar currentEquation aqui ou usá-la em um display secundário.
-    // Por enquanto, ela será resetada na próxima operação ou `limpar()`.
+    waitingForSecondOperand = true;
+    
+    updateDisplay(); 
 }
 
 function executarCalculo(first, second, op) {
@@ -84,13 +83,13 @@ function executarCalculo(first, second, op) {
         case '/':
             return second === 0 ? 'Erro' : first / second;
         default:
-            return second; // Caso padrão, retorna o segundo operando (pode ser ajustado)
+            return second;
     }
 }
 
 function limpar() {
     displayValue = '0';
-    currentEquation = ''; // Limpa a equação também
+    currentEquation = '';
     operator = null;
     firstOperand = null;
     waitingForSecondOperand = false;
@@ -98,35 +97,36 @@ function limpar() {
 }
 
 function apagar() {
-    if (displayValue === 'Erro') { // Se o display mostra "Erro", limpa tudo ao apagar
+    if (displayValue === 'Erro') {
         limpar();
         return;
     }
     
-    // Se o display está mostrando o segundo operando, apaga-o
-    if (!waitingForSecondOperand) { 
-        displayValue = displayValue.slice(0, -1);
-        if (displayValue === '' || displayValue === '-') { // Se ficar vazio ou só um sinal de menos
-            displayValue = '0'; // Volta para zero
+    if (waitingForSecondOperand && operator !== null && firstOperand !== null) {
+        if (displayValue === '') {
+            return; 
         }
     }
-    // Não apaga a equação em currentEquation, pois ela representa a operação anterior
+
+    displayValue = displayValue.slice(0, -1);
+    if (displayValue === '' || displayValue === '-') {
+        displayValue = '0';
+    }
     updateDisplay();
 }
-
 
 function raizQuadrada() {
     const inputValue = parseFloat(displayValue);
     if (isNaN(inputValue) || inputValue < 0) {
         displayValue = 'Erro';
-        currentEquation = ''; // Limpa equação em caso de erro
+        currentEquation = '';
     } else {
-        currentEquation = `√(${inputValue})`; // Ex: "√(9)"
+        currentEquation = `√(${inputValue})`;
         displayValue = String(Math.sqrt(inputValue));
     }
     firstOperand = null;
     operator = null;
-    waitingForSecondOperand = false;
+    waitingForSecondOperand = true;
     updateDisplay();
 }
 
@@ -134,18 +134,17 @@ function potencia() {
     const inputValue = parseFloat(displayValue);
     if (firstOperand === null) {
         firstOperand = inputValue;
-        operator = 'potencia'; // Define o operador para potência
+        operator = 'potencia';
         waitingForSecondOperand = true;
-        currentEquation = displayValue + '^'; // Mostra "5^"
-        displayValue = ''; // Limpa o display para o expoente
+        currentEquation = displayValue + '^';
+        displayValue = '';
     } else {
-        // Calcula a potência quando o segundo operando (expoente) é inserido e '=' é pressionado
         const result = Math.pow(firstOperand, inputValue);
-        currentEquation += inputValue + ' ='; // Completa a equação
+        currentEquation += inputValue + ' =';
         displayValue = String(result);
         firstOperand = null;
         operator = null;
-        waitingForSecondOperand = false;
+        waitingForSecondOperand = true;
     }
     updateDisplay();
 }
@@ -153,17 +152,15 @@ function potencia() {
 function updateDisplay() {
     const displayElement = document.getElementById('display');
     if (displayElement) {
+        let textToDisplay = '';
 
-        if (currentEquation && currentEquation.endsWith(' =')) {
-             // Se já calculou, mostra só o resultado e o que foi calculado
-             displayElement.value = displayValue; // Só o resultado no display principal
-        } else if (currentEquation) {
-             // Mostra a equação parcial no display (se tiver espaço)
-             displayElement.value = currentEquation + displayValue;
+        if (currentEquation && !currentEquation.endsWith(' =')) {
+            textToDisplay = currentEquation + displayValue;
         } else {
-            // Caso contrário, mostra apenas o valor atual
-            displayElement.value = displayValue;
+            textToDisplay = displayValue;
         }
+        
+        displayElement.value = textToDisplay;
     }
 }
 
