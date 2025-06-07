@@ -1,3 +1,387 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+#btn-voltar {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#btn-voltar:hover {
+    background-color: #2980b9;
+}
+
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #34495e;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.introducao-site {
+    background-color: #eef7ff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.introducao-site p {
+    margin-bottom: 1rem;
+}
+
+.introducao-site p:last-child {
+    margin-bottom: 0;
+}
+
+.calculadoras h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.grid .anuncio.full-span {
+    grid-column: 1 / -1;
+    background-color: #fff8d4;
+    border: 2px solid #e1b100;
+    border-radius: 10px;
+    color: #8e44ad;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid .anuncio.full-span:hover {
+    background-color: #ffe58a;
+    color: #5e3370;
+    border-color: #d4a000;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
+}
+
+.grid .anuncio.full-span a {
+    color: #5e3370;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.anuncio-lateral {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 300px;
+    background-color: #f4f4f4;
+    border: 2px solid #007c3d;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
+    font-family: 'Calibri', sans-serif;
+    z-index: 999;
+}
+
+.anuncio-lateral h3 {
+    color: #007c3d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.anuncio-lateral .botao {
+    display: block;
+    background-color: #007c3d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.anuncio-lateral .botao:hover {
+    background-color: #005d2e;
+}
+
+.fechar-anuncio {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007c3d;
+    cursor: pointer;
+}
+.fechar-anuncio:hover {
+    color: #005d2e;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.botao-porcentagem {
+    text-align: center;
+}
+
+.botao-porcentagem button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.botao-porcentagem button:hover {
+    background-color: #2980b9;
+}
+
+.resultado {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.content-explanation {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1rem;
+}
+
+.content-explanation h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.content-explanation h3 {
+    font-size: 1.4rem;
+    color: #34495e;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.content-explanation p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.content-explanation ul,
+.content-explanation ol {
+    margin-bottom: 1em;
+    padding-left: 25px;
+}
+
+.content-explanation ul li,
+.content-explanation ol li {
+    margin-bottom: 0.5em;
+}
+
+.content-explanation table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+}
+
+.content-explanation table th,
+.content-explanation table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.content-explanation table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+.content-explanation a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.content-explanation a:hover {
+    text-decoration: underline;
+}
+
+.content-explanation .faq {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.content-explanation .faq h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.content-explanation .faq p {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.content-explanation .cta-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 15px;
+    background-color: #eaf6ff;
+    border-radius: 5px;
+}
+
+/* Estilos Específicos para o novo Display Duplo da Calculadora */
 .display {
     display: flex;
     flex-direction: column; /* Coloca um input em cima do outro */
@@ -30,4 +414,212 @@
 .main-display {
     font-size: 2em; /* Fonte maior para o resultado principal */
     font-weight: bold;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.botoes button {
+    background-color: #ecf0f1;
+    color: #333;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botoes button:hover {
+    background-color: #dbe4e6;
+    transform: translateY(-2px);
+}
+
+.botoes button:active {
+    background-color: #cdd6d8;
+    transform: translateY(0);
+}
+
+.botoes .clear,
+.botoes .operador,
+.botoes .funcao-especial {
+    background-color: #3498db;
+    color: white;
+}
+
+.botoes .clear:hover,
+.botoes .operador:hover,
+.botoes .funcao-especial:hover {
+    background-color: #2980b9;
+}
+
+.botoes .igual {
+    background-color: #2ecc71;
+    color: white;
+    grid-column: span 2;
+}
+
+.botoes .igual:hover {
+    background-color: #27ae60;
+}
+
+.botoes .zero {
+    grid-column: span 2;
+}
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem 1.5rem;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 1.8rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    header p {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    #btn-voltar {
+        top: 15px;
+        left: 15px;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        transform: none;
+    }
+
+    main {
+        padding: 1rem;
+    }
+    .introducao-site {
+        padding: 1rem 1rem;
+        font-size: 0.95rem;
+    }
+    .calculadoras h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    .grid .anuncio.full-span {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .grid .anuncio.full-span p {
+        margin: 0.5rem 0;
+    }
+    .grid .anuncio.full-span a {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .container {
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 90%;
+    }
+
+    .container h2 {
+        font-size: 1.5rem;
+    }
+
+    .botoes button {
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .content-explanation {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .content-explanation h2 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    .content-explanation h3 {
+        font-size: 1.2rem;
+    }
+
+    .content-explanation table,
+    .content-explanation table thead,
+    .content-explanation table tbody,
+    .content-explanation table th,
+    .content-explanation table td,
+    .content-explanation table tr {
+        display: block;
+    }
+
+    .content-explanation table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .content-explanation table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .content-explanation table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    .content-explanation table td:before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.8rem;
+    }
+    .calculadoras h2 {
+        font-size: 1.4rem;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        padding: 1rem;
+    }
+    .introducao-site {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    #btn-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
 }
