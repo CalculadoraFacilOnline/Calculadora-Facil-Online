@@ -1,9 +1,38 @@
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
   color: #333;
+}
+
+header {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.introducao-site {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #ffffff;
+  border-left: 5px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .container {
@@ -18,14 +47,46 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent;
 }
 
 .card:hover {
   transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #0077cc;
 }
 
-/* Responsividade adicional (opcional) */
+.card.anuncio {
+  background-color: #fffae6;
+  border: 2px dashed #ffcc00;
+  text-align: center;
+  font-weight: bold;
+  color: #a67c00;
+}
+
+.card.anuncio a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.card.anuncio a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
@@ -44,5 +105,15 @@ body {
 
   .card {
     padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p,
+  .introducao-site {
+    font-size: 0.95rem;
+    padding: 16px;
   }
 }
