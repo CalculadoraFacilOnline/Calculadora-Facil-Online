@@ -1,248 +1,117 @@
 /* Reset e base */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f2f2f2;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header */
 header {
-    background-color: #4a90e2;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
 }
 
 header p {
-    font-size: 1rem;
-    color: #e0e0e0;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 500;
 }
 
-#btn-voltar {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s, color 0.3s;
-}
-
-#btn-voltar:hover {
-    background: white;
-    color: #4a90e2;
-}
-
-/* Container principal */
 main {
-    flex: 1;
-    padding: 1rem;
+  flex: 1;
+  padding: 2rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .container {
-    max-width: 400px;
-    margin: 2rem auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2.5rem;
 }
 
-/* Display */
-.display {
-    background-color: #1e1e1e;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.introducao-site p {
+  max-width: 900px;
+  margin: 0 auto 1rem auto;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-.display input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: #00ffcc;
-    font-size: 1.6rem;
-    font-family: monospace;
-    text-align: right;
-    padding-right: 0.5rem;
+h2 {
+  color: #004aad;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
-#history-display {
-    font-size: 1rem;
-    color: #aaa;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
-/* Botões */
-.botoes {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    padding: 1rem;
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 180px;
 }
 
-.botoes button {
-    padding: 1rem;
-    font-size: 1.4rem;
-    border: none;
-    border-radius: 8px;
-    background: #e6e6e6;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: inset 0 -3px #c0c0c0;
+.card:hover, .card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
 }
 
-.botoes button:hover {
-    background: #d4d4d4;
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: #004aad;
+  font-size: 1.5rem;
 }
 
-.botoes button:active {
-    transform: scale(0.96);
+.card p {
+  color: #555;
+  font-size: 1rem;
+  flex-grow: 1;
 }
 
-.botoes .operador {
-    background-color: #f7b731;
-    color: white;
-    font-weight: bold;
-}
-
-.botoes .operador:hover {
-    background-color: #f5a623;
-}
-
-.botoes .igual {
-    background-color: #4cd137;
-    color: white;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.botoes .igual:hover {
-    background-color: #44bd32;
-}
-
-.botoes .clear {
-    background-color: #e74c3c;
-    color: white;
-    font-weight: bold;
-}
-
-.botoes .clear:hover {
-    background-color: #c0392b;
-}
-
-.botoes .funcao-especial {
-    background-color: #9b59b6;
-    color: white;
-    font-weight: bold;
-}
-
-.botoes .funcao-especial:hover {
-    background-color: #8e44ad;
-}
-
-.botoes .zero {
-    grid-column: span 2;
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .botoes {
-        gap: 0.4rem;
-        padding: 0.8rem;
-    }
-
-    .botoes button {
-        padding: 0.9rem;
-        font-size: 1.2rem;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Explicações */
-.content-explanation {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 1rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-.content-explanation h2 {
-    font-size: 1.4rem;
-    margin-top: 1rem;
-    color: #333;
-}
-
-.content-explanation p,
-.content-explanation ul,
-.content-explanation ol {
-    margin-top: 0.5rem;
-    color: #555;
-    font-size: 1rem;
-}
-
-.content-explanation ul,
-.content-explanation ol {
-    padding-left: 1.5rem;
-}
-
-.content-explanation li {
-    margin-bottom: 0.4rem;
-}
-
-.cta-bottom {
-    margin-top: 2rem;
-    font-weight: bold;
-    color: #2d3436;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-/* Rodapé */
-footer {
-    background: #4a90e2;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
+/* Anuncio destaque */
+.card.anuncio.full-span {
+  grid-column: 1 / -1;
+  background-color: #fff8d4;
+  border: 2px solid #e1b100;
+  color: #8e44ad;
+  font-weight: 600;
