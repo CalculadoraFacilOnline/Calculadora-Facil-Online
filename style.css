@@ -108,10 +108,17 @@ h2 {
   flex-grow: 1;
 }
 
-/* Anuncio destaque */
+
 .card.anuncio.full-span {
   grid-column: 1 / -1;
   background-color: #fff8d4;
   border: 2px solid #e1b100;
   color: #8e44ad;
-  font-weight: 600;
+  font-weight: 600; 
+  text-align: center;
+  font-size: 2rem;
+}
+.imcCalculadora {
+  higth: 50%;
+}
+IMC 
