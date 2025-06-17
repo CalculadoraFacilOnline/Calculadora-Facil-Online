@@ -1,131 +1,4 @@
-Você disse:
-Chat, cria um CSS para esse HTML?
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Calculadoras Online Gratuitas: Finanças, Saúde, Matemática e Mais</title>
-    <meta name="description" content="Calculadoras online gratuitas, rápidas e fáceis. IMC, juros compostos, financiamento, porcentagem, gestacional e muito mais.">
-    <meta name="keywords" content="calculadora online, IMC, juros compostos, financiamento, porcentagem, gravidez, gestacional, saúde, matemática, calcular, finanças, saúde, matemática, gestação, gratuita">
-    <meta name="author" content="Calculadora Fácil Online">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
-    <meta property="og:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e muito mais. Simples, rápido e gratuito.">
-    <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
-    <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online">
-    <meta property="og:site_name" content="Calculadora Fácil Online">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
-    <meta name="twitter:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e mais. Simples, rápido e gratuito.">
-    <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Calculadora Fácil Online",
-      "url": "https://calculadorafacilonline.github.io/calculadoras-online",
-      "description": "Calculadoras online gratuitas para finanças, saúde, gestação, matemática e mais.",
-      "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Calculadora Fácil Online",
-        "url": "https://calculadorafacilonline.github.io",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
-        }
-      }
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <header>
-        <h1>Calculadoras Online</h1>
-        <p>Ferramentas gratuitas para facilitar sua vida. Simples, rápidas e sempre disponíveis.</p>
-    </header>
-
-    <main>
-        <section class="introducao-site container">
-            <p>Bem-vindo(a) ao <strong>Calculadora Fácil Online</strong>, seu portal completo para ferramentas de cálculo gratuitas e eficientes. Nossa plataforma oferece uma vasta gama de calculadoras para diversas áreas da sua vida, desde <em>finanças pessoais</em> e <em>saúde</em> até <em>matemática</em> do dia a dia e <em>gestação</em>. Simplifique suas decisões com nossa calculadora de IMC, simule investimentos com a calculadora de juros compostos, planeje seu financiamento, calcule porcentagens rapidamente e acompanhe sua gestação com precisão. Todas as nossas ferramentas são desenvolvidas para serem intuitivas, rápidas e acessíveis a qualquer momento, em qualquer dispositivo.</p>
-            <p>Explore nossa coleção abaixo e encontre a calculadora ideal para suas necessidades!</p>
-        </section>
-
-        <section class="calculadoras container">
-            <h2>Escolha uma calculadora</h2>
-            <div class="grid">
-
-                <a href="calculadora-imc.html" class="card" aria-label="Calculadora de IMC">
-                    <h3>Calculadora de IMC</h3>
-                    <p>Descubra seu Índice de Massa Corporal</p>
-                </a>
-
-                <a href="calculadora-tbm.html" class="card" aria-label="Calculadora de TMB">
-                    <h3>Calculadora de TMB</h3>
-                    <p>Descubra sua Taxa Metabólica Basal</p>
-                </a>
-
-                <a href="calculadora-juros-compostos.html" class="card" aria-label="Calculadora de Juros Compostos">
-                    <h3>Calculadora de Juros Compostos</h3>
-                    <p>Simule rendimentos e investimentos</p>
-                </a>
-
-                <a href="calculadora-financiamento.html" class="card" aria-label="Calculadora de Financiamento">
-                    <h3>Calculadora de Financiamento</h3>
-                    <p>Simule parcelas de financiamentos</p>
-                </a>
-
-                <div class="card anuncio full-span" role="region" aria-label="Anuncie aqui">
-                    <p><strong>Anuncie aqui!</strong></p>
-                    <p>Contato: <a href="mailto:calculadorafacilonline@gmail.com">calculadorafacilonline@gmail.com</a></p>
-                </div>
-
-                <a href="calculadora-porcentagem.html" class="card" aria-label="Calculadora de Porcentagem">
-                    <h3>Calculadora de Porcentagem</h3>
-                    <p>Calcule descontos, acréscimos e proporções</p>
-                </a>
-
-                <a href="calculadora-gestacional.html" class="card" aria-label="Calculadora Gestacional">
-                    <h3>Calculadora Gestacional</h3>
-                    <p>Saiba semanas de gestação e a data provável do parto</p>
-                </a>
-
-                <a href="calculadora-padrao.html" class="card" aria-label="Calculadora Padrão">
-                    <h3>Calculadora Padrão</h3>
-                    <p>Realize cálculos simples e rápidos</p>
-                </a>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 <strong>Calculadora Fácil Online</strong>. Todos os direitos reservados. | <a href="politica-privacidade.html">Política de Privacidade</a> | <a href="termos-uso.html">Termos de Uso</a> | <a href="contato.html">Contato</a></p>
-    </footer>
-</body>
-</html>
-
-E se acha que esse html tem bom SEO?
-
-
-O ChatGPT disse:
-Vamos por partes:
-
-✅ CSS para o HTML
-Aqui está um CSS moderno, responsivo e clean, que valoriza a leitura e facilita a navegação:
-
-css
-Copiar
-Editar
-/* Reset básico */
+/* Reset e base */
 * {
   margin: 0;
   padding: 0;
@@ -134,13 +7,13 @@ Editar
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
+  background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
   padding: 0 1rem;
 }
 
-/* Containers e espaçamento */
+/* Containers */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -149,88 +22,312 @@ body {
 
 /* Header */
 header {
-  background-color: #0d6efd;
-  color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
-/* Introdução */
-.introducao-site p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+#btn-voltar {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #388e3c;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* Títulos das seções */
+/* Cards de calculadoras */
 .calculadoras h2 {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #222;
 }
 
-/* Grid de calculadoras */
 .grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
 }
 
-/* Cartões */
 .card {
-  background-color: white;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
+  background: white;
   padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: scale(1.03);
+  background-color: #f1f8f4;
 }
 
 .card h3 {
   margin-bottom: 0.5rem;
-  color: #0d6efd;
-  font-size: 1.3rem;
-}
-
-/* Cartão de anúncio */
-.anuncio {
-  background-color: #fff3cd;
-  border: 1px solid #ffeeba;
-  color: #856404;
-  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .full-span {
-  grid-column: 1 / -1;
+  grid-column: span 2;
+}
+
+.anuncio {
+  background-color: #fffbe6;
+  border: 1px dashed #ffca28;
+}
+
+/* Calculadora padrão */
+.display {
+  background: #e0f2f1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-display,
+.main-display {
+  width: 100%;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  background: #ffffff;
+  border-radius: 4px;
+  text-align: right;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.botoes button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botoes button:hover {
+  background-color: #45a049;
+}
+
+.botoes .operador {
+  background-color: #388e3c;
+}
+
+.botoes .operador:hover {
+  background-color: #2e7d32;
+}
+
+.botoes .clear,
+.botoes .funcao-especial {
+  background-color: #f44336;
+}
+
+.botoes .clear:hover,
+.botoes .funcao-especial:hover {
+  background-color: #d32f2f;
+}
+
+.botoes .igual {
+  background-color: #2196f3;
+}
+
+.botoes .igual:hover {
+  background-color: #1976d2;
+}
+
+.botoes .zero {
+  grid-column: span 2;
+}
+
+/* Conteúdo explicativo */
+.content-explanation {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.content-explanation h2 {
+  margin-top: 1.5rem;
+  color: #2e7d32;
+}
+
+.content-explanation p,
+.content-explanation li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.content-explanation ul,
+.content-explanation ol {
+  padding-left: 1.5rem;
+}
+
+.content-explanation a {
+  color: #1e88e5;
+  text-decoration: underline;
+}
+
+.cta-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: #4CAF50;
 }
 
 /* Footer */
 footer {
   text-align: center;
+  padding: 1rem;
   font-size: 0.9rem;
-  padding: 2rem 1rem;
-  color: #6c757d;
+  background-color: #f1f1f1;
+  margin-top: 3rem;
+  color: #555;
 }
 
 footer a {
-  color: #0d6efd;
+  color: #388e3c;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #btn-voltar {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.botao-porcentagem {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.botao-porcentagem button {
+  padding: 0.75rem 1.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botao-porcentagem button:hover {
+  background-color: #45a049;
+}
+
+.resultado {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2e7d32;
+}
+
+/* Tabela responsiva e elegante */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+table th {
+  background-color: #f1f8f4;
+  font-weight: bold;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 2rem;
+}
+
+.faq h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.faq p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
 }
