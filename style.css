@@ -1,124 +1,236 @@
-/* Reset e base */
+Você disse:
+Chat, cria um CSS para esse HTML?
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadoras Online Gratuitas: Finanças, Saúde, Matemática e Mais</title>
+    <meta name="description" content="Calculadoras online gratuitas, rápidas e fáceis. IMC, juros compostos, financiamento, porcentagem, gestacional e muito mais.">
+    <meta name="keywords" content="calculadora online, IMC, juros compostos, financiamento, porcentagem, gravidez, gestacional, saúde, matemática, calcular, finanças, saúde, matemática, gestação, gratuita">
+    <meta name="author" content="Calculadora Fácil Online">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
+    <meta property="og:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e muito mais. Simples, rápido e gratuito.">
+    <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
+    <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online">
+    <meta property="og:site_name" content="Calculadora Fácil Online">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
+    <meta name="twitter:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e mais. Simples, rápido e gratuito.">
+    <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Calculadora Fácil Online",
+      "url": "https://calculadorafacilonline.github.io/calculadoras-online",
+      "description": "Calculadoras online gratuitas para finanças, saúde, gestação, matemática e mais.",
+      "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Fácil Online",
+        "url": "https://calculadorafacilonline.github.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Calculadoras Online</h1>
+        <p>Ferramentas gratuitas para facilitar sua vida. Simples, rápidas e sempre disponíveis.</p>
+    </header>
+
+    <main>
+        <section class="introducao-site container">
+            <p>Bem-vindo(a) ao <strong>Calculadora Fácil Online</strong>, seu portal completo para ferramentas de cálculo gratuitas e eficientes. Nossa plataforma oferece uma vasta gama de calculadoras para diversas áreas da sua vida, desde <em>finanças pessoais</em> e <em>saúde</em> até <em>matemática</em> do dia a dia e <em>gestação</em>. Simplifique suas decisões com nossa calculadora de IMC, simule investimentos com a calculadora de juros compostos, planeje seu financiamento, calcule porcentagens rapidamente e acompanhe sua gestação com precisão. Todas as nossas ferramentas são desenvolvidas para serem intuitivas, rápidas e acessíveis a qualquer momento, em qualquer dispositivo.</p>
+            <p>Explore nossa coleção abaixo e encontre a calculadora ideal para suas necessidades!</p>
+        </section>
+
+        <section class="calculadoras container">
+            <h2>Escolha uma calculadora</h2>
+            <div class="grid">
+
+                <a href="calculadora-imc.html" class="card" aria-label="Calculadora de IMC">
+                    <h3>Calculadora de IMC</h3>
+                    <p>Descubra seu Índice de Massa Corporal</p>
+                </a>
+
+                <a href="calculadora-tbm.html" class="card" aria-label="Calculadora de TMB">
+                    <h3>Calculadora de TMB</h3>
+                    <p>Descubra sua Taxa Metabólica Basal</p>
+                </a>
+
+                <a href="calculadora-juros-compostos.html" class="card" aria-label="Calculadora de Juros Compostos">
+                    <h3>Calculadora de Juros Compostos</h3>
+                    <p>Simule rendimentos e investimentos</p>
+                </a>
+
+                <a href="calculadora-financiamento.html" class="card" aria-label="Calculadora de Financiamento">
+                    <h3>Calculadora de Financiamento</h3>
+                    <p>Simule parcelas de financiamentos</p>
+                </a>
+
+                <div class="card anuncio full-span" role="region" aria-label="Anuncie aqui">
+                    <p><strong>Anuncie aqui!</strong></p>
+                    <p>Contato: <a href="mailto:calculadorafacilonline@gmail.com">calculadorafacilonline@gmail.com</a></p>
+                </div>
+
+                <a href="calculadora-porcentagem.html" class="card" aria-label="Calculadora de Porcentagem">
+                    <h3>Calculadora de Porcentagem</h3>
+                    <p>Calcule descontos, acréscimos e proporções</p>
+                </a>
+
+                <a href="calculadora-gestacional.html" class="card" aria-label="Calculadora Gestacional">
+                    <h3>Calculadora Gestacional</h3>
+                    <p>Saiba semanas de gestação e a data provável do parto</p>
+                </a>
+
+                <a href="calculadora-padrao.html" class="card" aria-label="Calculadora Padrão">
+                    <h3>Calculadora Padrão</h3>
+                    <p>Realize cálculos simples e rápidos</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <strong>Calculadora Fácil Online</strong>. Todos os direitos reservados. | <a href="politica-privacidade.html">Política de Privacidade</a> | <a href="termos-uso.html">Termos de Uso</a> | <a href="contato.html">Contato</a></p>
+    </footer>
+</body>
+</html>
+
+E se acha que esse html tem bom SEO?
+
+
+O ChatGPT disse:
+Vamos por partes:
+
+✅ CSS para o HTML
+Aqui está um CSS moderno, responsivo e clean, que valoriza a leitura e facilita a navegação:
+
+css
+Copiar
+Editar
+/* Reset básico */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+  padding: 0 1rem;
 }
 
+/* Containers e espaçamento */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
 header {
-  background-color: #004aad;
+  background-color: #0d6efd;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 header h1 {
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  font-size: 2.2rem;
 }
 
 header p {
   font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  font-weight: 500;
 }
 
-main {
-  flex: 1;
-  padding: 2rem 1rem 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.container {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 2.5rem;
-}
-
+/* Introdução */
 .introducao-site p {
-  max-width: 900px;
-  margin: 0 auto 1rem auto;
-  font-size: 1.1rem;
-  color: #444;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
 
-h2 {
-  color: #004aad;
+/* Títulos das seções */
+.calculadoras h2 {
   text-align: center;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
-  font-weight: 700;
-  font-size: 2rem;
 }
 
+/* Grid de calculadoras */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* Cards */
+/* Cartões */
 .card {
   background-color: white;
-  border-radius: 10px;
-  padding: 1.8rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 180px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover, .card:focus {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  outline: none;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-  color: #004aad;
-  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0d6efd;
+  font-size: 1.3rem;
 }
 
-.card p {
-  color: #555;
-  font-size: 1rem;
-  flex-grow: 1;
-}
-
-
-.card.anuncio.full-span {
-  grid-column: 1 / -1;
-  background-color: #fff8d4;
-  border: 2px solid #e1b100;
-  color: #8e44ad;
-  font-weight: 600; 
+/* Cartão de anúncio */
+.anuncio {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
   text-align: center;
-  font-size: 2rem;
 }
-.imcCalculadora {
-  higth: 50%;
+
+.full-span {
+  grid-column: 1 / -1;
 }
-IMC 
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  color: #6c757d;
+}
+
+footer a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
