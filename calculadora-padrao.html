@@ -8,41 +8,11 @@
   <meta name="keywords" content="calculadora online, operações básicas, raiz quadrada, potência, calculadora simples, matemática online" />
   <meta name="author" content="Calculadora Fácil Online" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Calculadora Padrão Online - Cálculos Simples e Avançados" />
-  <meta property="og:description" content="Use a calculadora padrão online para realizar operações matemáticas de forma fácil e rápida." />
-  <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" />
-  <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online/calculadora-padrao.html" />
-  <meta property="og:site_name" content="Calculadora Fácil Online" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Calculadora Padrão Online - Cálculos Simples e Avançados" />
-  <meta name="twitter:description" content="Calculadora gratuita para realizar contas básicas, raiz quadrada e potência online." />
-  <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Calculadora Padrão Online com Raiz e Potência",
-    "url": "https://calculadorafacilonline.github.io/calculadoras-online/calculadora-padrao.html",
-    "description": "Calculadora online para realizar operações básicas, raiz quadrada e potências. Simples, gratuita e rápida.",
-    "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora-padrao.png",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Calculadora Fácil Online",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
-      }
-    }
-  }
-  </script>
-
   <link rel="stylesheet" href="style-padrao.css" />
 </head>
 <body>
   <header>
-    <button id="btn-voltar" onclick="history.back()">⟵ Voltar</button>
+    <button id="btn-voltar" onclick="voltar()">⟵ Voltar</button>
     <h1>Calculadora Padrão</h1>
     <p>Efetue cálculos simples e avançados como raiz e potência diretamente do navegador.</p>
   </header>
@@ -56,7 +26,7 @@
       <div class="botoes">
         <button onclick="limpar()">C</button>
         <button onclick="apagar()">⌫</button>
-        <button onclick="raiz()">√</button>
+        <button onclick="raizQuadrada()">√</button>
         <button onclick="operar('/')">÷</button>
 
         <button onclick="inserir('7')">7</button>
