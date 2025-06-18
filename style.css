@@ -60,11 +60,15 @@ main {
 .card {
     background-color: white;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem; /* Aumentado o padding vertical */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px; /* Deixa os cards com altura mais uniforme e "gordinha" */
 }
 
 .card:hover {
@@ -73,8 +77,13 @@ main {
 }
 
 .card h3 {
-    margin-top: 0;
+    margin: 0 0 0.8rem 0;
+    font-size: 1.3rem;
     color: #004aad;
+}
+.card p {
+    font-size: 1rem;
+    color: #555;
 }
 
 footer {
