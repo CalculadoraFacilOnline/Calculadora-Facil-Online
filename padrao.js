@@ -64,7 +64,8 @@ function raizQuadrada() {
 function potencia() {
     if (current) {
         history += current + '^';
-        current += '**';
+        current = '';
+        resetNext = false;
         atualizarDisplays();
     }
 }
