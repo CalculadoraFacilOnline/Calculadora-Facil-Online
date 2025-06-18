@@ -1,183 +1,411 @@
-/* RESET E BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-/* CABEÇALHO */
 header {
-  background-color: #004aad;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 2rem;
 }
 
 header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-header p {
-  font-size: 1rem;
-}
-
-/* CONTEÚDO PRINCIPAL */
 main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
 }
 
-/* INTRODUÇÃO DO SITE */
 .introducao-site {
-  background-color: #eef7ff;
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  text-align: center;
-  line-height: 1.6;
+    background-color: #eef7ff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
+    text-align: center;
 }
 
 .introducao-site p {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .introducao-site p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-/* TÍTULO DA SEÇÃO DE CALCULADORAS */
 .calculadoras h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #004aad;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* GRID DE CARDS */
+/* Ajuste principal na grid para cards crescerem no desktop */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-/* CARD INDIVIDUAL */
+.botao-porcentagem {
+    text-align: center;
+}
+
 .card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem; /* Aumentado o padding vertical */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px; /* Deixa os cards com altura mais uniforme e "gordinha" */
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-  margin-top: 0;
-  color: #004aad;
+    margin: 0 0 0.8rem 0;
+    font-size: 1.3rem;
+    color: #004aad;
+}
+.card p {
+    font-size: 1rem;
+    color: #555;
 }
 
-/* ANÚNCIO FULL-SPAN */
-.anuncio.full-span {
-  grid-column: 1 / -1;
-  background-color: #fff8d4;
-  border: 2px solid #e1b100;
-  border-radius: 10px;
-  color: #8e44ad;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.anuncio.full-span:hover {
-  background-color: #ffe58a;
-  color: #5e3370;
-  border-color: #d4a000;
-  box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
-}
-
-.anuncio.full-span a {
-  color: #5e3370;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-/* RODAPÉ */
 footer {
-  background-color: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 
 footer a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #004aad;
-  text-decoration: underline;
+    color: #004aad;
+    text-decoration: underline;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  header {
-    padding: 1.5rem 1rem;
-  }
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+}
 
-  header h1 {
-    font-size: 1.8rem;
-  }
+.container h2 {
+    text-align: center;
+    color: #004aad;
+    margin-bottom: 1.5rem;
+}
 
-  header p {
-    font-size: 0.9rem;
-  }
+.form-group {
+    margin-bottom: 1.5rem;
+}
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
 
-  .introducao-site {
+input, select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00337a;
+}
+
+.resultado {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #004aad;
+    font-weight: bold;
+}
+
+.display {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.display input {
+    width: 100%;
     padding: 1rem;
-    font-size: 0.95rem;
-  }
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.botoes button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #004aad;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botoes button:hover {
+    background-color: #00337a;
+    transform: translateY(-2px);
+}
+
+.botoes button.igual {
+    grid-row: span 2;
+    background-color: #007c3d;
+}
+
+.botoes button.igual:hover {
+    background-color: #005d2e;
+}
+
+.botoes button.zero {
+    grid-column: span 2;
+}
+
+/* Botão voltar fixo no topo esquerdo */
+#btn-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 9999;
+}
+
+#btn-voltar:hover {
+    background-color: #00337a;
+    transform: translateY(-2px);
+}
+
+.grid .anuncio.full-span {
+    grid-column: 1 / -1;
+    background-color: #fff8d4;
+    border: 2px solid #e1b100;
+    border-radius: 10px;
+    color: #8e44ad;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid .anuncio.full-span:hover {
+    background-color: #ffe58a;
+    color: #5e3370;
+    border-color: #d4a000;
+    box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
+}
+
+.grid .anuncio.full-span a {
+    color: #5e3370;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.anuncio-lateral {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 300px;
+    background-color: #f4f4f4;
+    border: 2px solid #007c3d;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
+    font-family: 'Calibri', sans-serif;
+    z-index: 999;
+}
+
+.anuncio-lateral h3 {
+    color: #007c3d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.anuncio-lateral .botao {
+    display: block;
+    background-color: #007c3d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.anuncio-lateral .botao:hover {
+    background-color: #005d2e;
+}
+
+.fechar-anuncio {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007c3d;
+    cursor: pointer;
+}
+
+.fechar-anuncio:hover {
+    color: #005d2e;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    header p {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .calculadoras h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .grid .anuncio.full-span {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .grid .anuncio.full-span p {
+        margin: 0.5rem 0;
+    }
+
+    .grid .anuncio.full-span a {
+        font-size: 0.9rem;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .introducao-site {
+        padding: 1rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    #btn-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
+    header p {
+        font-size: 0.8rem;
+    }
 
-  .card {
-    padding: 1rem;
-  }
+    .calculadoras h2 {
+        font-size: 1.4rem;
+    }
 
-  .introducao-site {
-    padding: 0.8rem;
-    font-size: 0.9rem;
-  }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .introducao-site {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+    }
 }
