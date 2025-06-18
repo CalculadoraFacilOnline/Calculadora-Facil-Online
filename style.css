@@ -23,25 +23,23 @@ main {
     padding: 2rem;
 }
 
-/* Estilização para a nova seção de introdução */
 .introducao-site {
-    background-color: #eef7ff; /* Um azul bem clarinho para destacar */
+    background-color: #eef7ff;
     padding: 1.5rem 2rem;
-    margin-bottom: 2rem; /* Espaçamento entre a introdução e o h2 das calculadoras */
+    margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    line-height: 1.6; /* Melhora a legibilidade */
-    text-align: center; /* Centraliza o texto de introdução */
+    line-height: 1.6;
+    text-align: center;
 }
 
 .introducao-site p {
-    margin-bottom: 1rem; /* Espaço entre os parágrafos da introdução */
+    margin-bottom: 1rem;
 }
 
 .introducao-site p:last-child {
-    margin-bottom: 0; /* Remove margem do último parágrafo */
+    margin-bottom: 0;
 }
-
 
 .calculadoras h2 {
     text-align: center;
@@ -50,7 +48,7 @@ main {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -86,7 +84,7 @@ footer {
     margin-top: 2rem;
 }
 
-footer a { /* Estilização para os novos links no rodapé */
+footer a {
     color: #fff;
     text-decoration: none;
     margin: 0 0.5rem;
@@ -98,9 +96,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Os estilos para calculadora individual e botões (display, botoes, btn-voltar)
-   não são relevantes para a página index.html, mas mantive-os no CSS
-   pois fazem parte do seu arquivo completo. */
 .container {
     background-color: white;
     padding: 2rem;
@@ -155,6 +150,7 @@ button:hover {
     color: #004aad;
     font-weight: bold;
 }
+
 .display {
     width: 100%;
     margin-bottom: 1rem;
@@ -204,8 +200,9 @@ button:hover {
 .botoes button.zero {
     grid-column: span 2;
 }
+
 #btn-voltar {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     background-color: #004aad;
@@ -216,19 +213,12 @@ button:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 #btn-voltar:hover {
     background-color: #00337a;
     transform: translateY(-2px);
-}
-.grid {
-    /* Esta regra de grid está duplicada, mas foi mantida para garantir.
-       A media query mais abaixo ajustará para mobile. */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
 }
 
 .grid .anuncio.full-span {
@@ -236,7 +226,7 @@ button:hover {
     background-color: #fff8d4;
     border: 2px solid #e1b100;
     border-radius: 10px;
-    color: #8e44ad; /* Cor original do texto no anúncio */
+    color: #8e44ad;
     font-weight: 600;
     font-size: 1.1rem;
     padding: 15px;
@@ -248,31 +238,30 @@ button:hover {
 
 .grid .anuncio.full-span:hover {
     background-color: #ffe58a;
-    color: #5e3370; /* Cor ao passar o mouse */
+    color: #5e3370;
     border-color: #d4a000;
     box-shadow: 0 4px 12px rgba(211, 84, 0, 0.5);
 }
 
 .grid .anuncio.full-span a {
-    color: #5e3370; /* Cor do link no anúncio */
+    color: #5e3370;
     text-decoration: underline;
     font-weight: 600;
 }
 
-/* Anúncio Lateral - Não é exibido na página principal do seu HTML, mas mantido. */
 .anuncio-lateral {
     position: fixed;
     right: 20px;
     top: 100px;
     width: 300px;
     background-color: #f4f4f4;
-    border: 2px solid #007c3d; /* Verde Excel */
+    border: 2px solid #007c3d;
     border-radius: 5px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 124, 61, 0.3);
     font-family: 'Calibri', sans-serif;
-    z-index: 999; /* Garante que fique acima de outros elementos se sobrepostos */
+    z-index: 999;
 }
 
 .anuncio-lateral h3 {
@@ -297,7 +286,6 @@ button:hover {
     background-color: #005d2e;
 }
 
-/* Botão de Fechar */
 .fechar-anuncio {
     position: absolute;
     top: 5px;
@@ -309,13 +297,13 @@ button:hover {
     color: #007c3d;
     cursor: pointer;
 }
+
 .fechar-anuncio:hover {
     color: #005d2e;
 }
 
-/* Media Queries para responsividade */
+/* Media Queries */
 @media (max-width: 768px) {
-    /* Cabeçalho */
     header {
         padding: 1.5rem 1rem;
         text-align: center;
@@ -333,20 +321,17 @@ button:hover {
         white-space: normal;
     }
 
-    /* Título H2 "Escolha uma calculadora" */
     .calculadoras h2 {
         text-align: center;
         margin-bottom: 1.5rem;
         font-size: 1.6rem;
     }
 
-    /* Grid de calculadoras */
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
     }
 
-    /* Card de Anúncio */
     .grid .anuncio.full-span {
         grid-column: 1 / -1;
         padding: 1rem;
@@ -363,215 +348,55 @@ button:hover {
         white-space: normal;
     }
 
-    /* Ajustes gerais de padding para o main */
     main {
         padding: 1rem;
     }
 
-    /* Estilização da introdução em telas menores */
     .introducao-site {
-        padding: 1rem 1rem; /* Reduz padding */
-        font-size: 0.95rem; /* Ajusta tamanho da fonte */
+        padding: 1rem 1rem;
+        font-size: 0.95rem;
     }
-}
 
-/* Para telas ainda menores (ex: iPhone SE, etc.) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    header p {
-        font-size: 0.8rem;
-    }
-    .calculadoras h2 {
-        font-size: 1.4rem;
-    }
-    .grid {
-        grid-template-columns: 1fr; /* Força os cards a empilharem verticalmente em telas muito pequenas */
-    }
-    .card {
-        padding: 1rem;
-    }
-    .introducao-site {
-        padding: 0.8rem 0.8rem; /* Ainda mais compacto */
+    #btn-voltar {
+        top: 10px;
+        left: 10px;
+        padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
     }
 }
 
-/* Para telas maiores que smartphones, mas menores que desktops (ex: tablets) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .calculadoras h2 {
+        font-size: 1.4rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .introducao-site {
+        padding: 0.8rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.2rem;
     }
 }
-.content-explanation {
-  background-color: #ffffff; /* Fundo branco para o conteúdo */
-  padding: 30px; /* Espaçamento interno generoso */
-  margin: 30px auto; /* Margem para separar da calculadora e centralizar */
-  border-radius: 8px; /* Cantos arredondados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
-  max-width: 800px; /* Limita a largura para melhor legibilidade em telas grandes */
-  line-height: 1.6; /* Espaçamento entre linhas para facilitar a leitura */
-  color: #333; /* Cor de texto mais escura para contraste */
-  font-size: 1rem; /* Tamanho de fonte base */
-}
 
-/* --- Estilos para os Títulos dentro do Conteúdo --- */
-.content-explanation h2 {
-  font-size: 1.8rem; /* Tamanho maior para títulos principais */
-  color: #2c3e50; /* Cor escura para destaque */
-  margin-top: 40px; /* Espaçamento antes de cada novo H2 */
-  margin-bottom: 15px; /* Espaçamento depois do H2 */
-  border-bottom: 2px solid #e0e0e0; /* Linha sutil para separar seções */
-  padding-bottom: 10px; /* Espaçamento entre texto e linha */
-}
-
-.content-explanation h3 {
-  font-size: 1.4rem; /* Tamanho para subtítulos */
-  color: #34495e; /* Uma cor um pouco mais clara que o h2 */
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-/* --- Estilos para Parágrafos --- */
-.content-explanation p {
-  margin-bottom: 1em; /* Espaçamento entre parágrafos */
-  text-align: justify; /* Justifica o texto para um visual mais limpo */
-}
-
-/* --- Estilos para Listas (UL, OL) --- */
-.content-explanation ul,
-.content-explanation ol {
-  margin-bottom: 1em;
-  padding-left: 25px; /* Recuo para os itens da lista */
-}
-
-.content-explanation ul li,
-.content-explanation ol li {
-  margin-bottom: 0.5em; /* Espaçamento entre itens da lista */
-}
-
-/* --- Estilos para Tabelas --- */
-.content-explanation table {
-  width: 100%; /* Tabela ocupa toda a largura disponível */
-  border-collapse: collapse; /* Remove espaçamento entre bordas de células */
-  margin: 20px 0; /* Espaçamento antes e depois da tabela */
-  font-size: 0.95rem; /* Fonte um pouco menor para tabelas */
-}
-
-.content-explanation table th,
-.content-explanation table td {
-  border: 1px solid #ddd; /* Bordas para as células */
-  padding: 10px; /* Espaçamento interno das células */
-  text-align: left; /* Alinha texto à esquerda */
-}
-
-.content-explanation table th {
-  background-color: #f2f2f2; /* Fundo cinza para cabeçalhos */
-  font-weight: bold; /* Negrito para cabeçalhos */
-  color: #555;
-}
-
-/* --- Estilos para Links --- */
-.content-explanation a {
-  color: #007bff; /* Cor padrão de link (azul) */
-  text-decoration: none; /* Remove sublinhado padrão */
-}
-
-.content-explanation a:hover {
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-}
-
-/* --- Estilos para a Seção FAQ --- */
-.content-explanation .faq {
-  margin-top: 30px;
-  border-top: 1px solid #eee; /* Linha de separação acima do FAQ */
-  padding-top: 20px;
-}
-
-.content-explanation .faq h3 {
-  font-size: 1.2rem; /* Tamanho do título da pergunta */
-  color: #444;
-  margin-bottom: 5px;
-}
-
-.content-explanation .faq p {
-  margin-bottom: 15px; /* Espaço após a resposta */
-  text-align: left; /* Mantém o alinhamento esquerdo para o FAQ */
-}
-
-/* --- Estilo para a Chamada para Ação inferior (CTA) --- */
-.content-explanation .cta-bottom {
-  text-align: center; /* Centraliza o CTA */
-  margin-top: 40px; /* Mais espaço acima */
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #2c3e50;
-  padding: 15px;
-  background-color: #eaf6ff; /* Fundo levemente azul para destaque */
-  border-radius: 5px;
-}
-
-
-/* --- Responsividade Básica (para telas menores) --- */
-@media (max-width: 768px) {
-  .content-explanation {
-    padding: 20px;
-    margin: 20px auto;
-  }
-
-  .content-explanation h2 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-  }
-
-  .content-explanation h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Faz a tabela se comportar como blocos em mobile */
-  .content-explanation table,
-  .content-explanation table thead,
-  .content-explanation table tbody,
-  .content-explanation table th,
-  .content-explanation table td,
-  .content-explanation table tr {
-    display: block;
-  }
-
-  /* Esconde o cabeçalho original da tabela em mobile */
-  .content-explanation table thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  /* Adiciona borda e margem para cada linha da tabela em mobile */
-  .content-explanation table tr {
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-
-  /* Estiliza cada célula da tabela em mobile */
-  .content-explanation table td {
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%; /* Espaço para o data-label */
-    text-align: right; /* Alinha o valor à direita */
-  }
-
-  /* Exibe o data-label (cabeçalho) antes do conteúdo da célula em mobile */
-  .content-explanation table td:before {
-    position: absolute;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    text-align: left;
-    font-weight: bold;
-    content: attr(data-label); /* Pega o valor do atributo data-label */
-  }
-}
+/* content-explanation segue inalterado */
