@@ -3,24 +3,22 @@ let current = '';
 let operator = '';
 let resetNext = false;
 
-const historyDisplay = document.getElementById('history-display');
-const mainDisplay = document.getElementById('main-display');
+const display = document.getElementById('display');
 
-function atualizarDisplays() {
-    historyDisplay.value = history;
-    mainDisplay.value = current || '0';
+function atualizarDisplay() {
+    display.value = history + current || '0';
 }
 
-function adicionar(valor) {
+function inserir(valor) {
     if (resetNext) {
         current = '';
         resetNext = false;
     }
     current += valor;
-    atualizarDisplays();
+    atualizarDisplay();
 }
 
-function handleOperator(op) {
+function operar(op) {
     if (current === '') return;
 
     if (history && !resetNext) {
@@ -33,7 +31,7 @@ function handleOperator(op) {
 
     operator = op;
     resetNext = true;
-    atualizarDisplays();
+    atualizarDisplay();
 }
 
 function limpar() {
@@ -41,13 +39,13 @@ function limpar() {
     current = '';
     operator = '';
     resetNext = false;
-    atualizarDisplays();
+    atualizarDisplay();
 }
 
 function apagar() {
     if (!resetNext && current.length > 0) {
         current = current.slice(0, -1);
-        atualizarDisplays();
+        atualizarDisplay();
     }
 }
 
@@ -57,7 +55,7 @@ function raizQuadrada() {
         history += `√(${current}) `;
         current = resultado.toString();
         resetNext = true;
-        atualizarDisplays();
+        atualizarDisplay();
     }
 }
 
@@ -66,29 +64,50 @@ function potencia() {
         history += current + '^';
         current = '';
         resetNext = false;
-        atualizarDisplays();
+        atualizarDisplay();
     }
 }
 
 function calcular() {
     try {
         let expressao = history + current;
-
-        // Substituir `^` por `**` se tiver usado `potencia`
         expressao = expressao.replace(/\^/g, '**');
-
         const resultado = eval(expressao);
-        history += current + ' =';
+        history += current + ' = ';
         current = resultado.toString();
         resetNext = true;
-        atualizarDisplays();
+        atualizarDisplay();
     } catch (e) {
         current = 'Erro';
         resetNext = true;
-        atualizarDisplays();
+        atualizarDisplay();
     }
 }
 
 function voltar() {
     window.history.back();
 }
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+
+    if (!isNaN(key)) {
+        // Tecla numérica (0–9)
+        inserir(key);
+    } else if (key === '.') {
+        inserir('.');
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        operar(key);
+    } else if (key === 'Enter' || key === '=') {
+        event.preventDefault(); // Evita o som do Enter
+        calcular();
+    } else if (key === 'Backspace') {
+        apagar();
+    } else if (key.toLowerCase() === 'c') {
+        limpar();
+    } else if (key === 'r') {
+        // "r" para raiz quadrada
+        raizQuadrada();
+    } else if (key === '^') {
+        potencia();
+    }
+});
