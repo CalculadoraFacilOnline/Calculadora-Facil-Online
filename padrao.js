@@ -13,24 +13,30 @@ function inserir(valor) {
     if (resetNext) {
         current = '';
         resetNext = false;
+        history = ''; // Limpa histórico ao começar nova entrada após resultado
     }
     current += valor;
     atualizarDisplay();
 }
 
 function operar(op) {
-    if (current === '') return;
+    if (current === '' && history === '') return; // nada para operar
 
-    if (history && !resetNext) {
-        history += current + ' ' + op + ' ';
-    } else if (!history) {
+    if (resetNext) {
+        // Se acabou de calcular, usa resultado como base
         history = current + ' ' + op + ' ';
+        current = '';
+        resetNext = false;
     } else {
-        history = history.slice(0, -2) + op + ' ';
+        if (current === '') {
+            // Troca operador no histórico se o usuário apertar outro operador direto
+            history = history.slice(0, -2) + op + ' ';
+        } else {
+            history += current + ' ' + op + ' ';
+            current = '';
+        }
     }
-
     operator = op;
-    resetNext = true;
     atualizarDisplay();
 }
 
@@ -43,7 +49,12 @@ function limpar() {
 }
 
 function apagar() {
-    if (!resetNext && current.length > 0) {
+    if (resetNext) {
+        // Se está esperando resetar, apagar limpa tudo
+        limpar();
+        return;
+    }
+    if (current.length > 0) {
         current = current.slice(0, -1);
         atualizarDisplay();
     }
@@ -51,21 +62,27 @@ function apagar() {
 
 function raizQuadrada() {
     if (current) {
-        const resultado = Math.sqrt(parseFloat(current));
-        history += `√(${current}) `;
-        current = resultado.toString();
-        resetNext = true;
-        atualizarDisplay();
+        const num = parseFloat(current);
+        if (num >= 0) {
+            const resultado = Math.sqrt(num);
+            history = `√(${current}) = `;
+            current = resultado.toString();
+            resetNext = true;
+            atualizarDisplay();
+        }
     }
 }
 
 function potencia() {
-    if (current) {
-        history += current + '^';
+    if (resetNext) {
+        history = current + '^';
         current = '';
         resetNext = false;
-        atualizarDisplay();
+    } else if (current) {
+        history += current + '^';
+        current = '';
     }
+    atualizarDisplay();
 }
 
 function calcular() {
@@ -87,25 +104,25 @@ function calcular() {
 function voltar() {
     window.history.back();
 }
+
+// Suporte ao teclado (opcional, pode manter se quiser)
 document.addEventListener('keydown', function(event) {
     const key = event.key;
 
     if (!isNaN(key)) {
-        // Tecla numérica (0–9)
         inserir(key);
     } else if (key === '.') {
         inserir('.');
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
         operar(key);
     } else if (key === 'Enter' || key === '=') {
-        event.preventDefault(); // Evita o som do Enter
+        event.preventDefault();
         calcular();
     } else if (key === 'Backspace') {
         apagar();
     } else if (key.toLowerCase() === 'c') {
         limpar();
     } else if (key === 'r') {
-        // "r" para raiz quadrada
         raizQuadrada();
     } else if (key === '^') {
         potencia();
