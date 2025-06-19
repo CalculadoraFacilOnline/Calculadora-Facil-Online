@@ -23,6 +23,15 @@ header {
   position: relative;
 }
 
+header h1 {
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
 /* Botão Voltar */
 #btn-voltar {
   position: fixed;
@@ -44,13 +53,26 @@ header {
   transform: translateY(-2px);
 }
 
-header h1 {
-  margin-bottom: 0.3rem;
-}
+/* Versão menor do botão em celulares */
+@media (max-width: 480px) {
+  #btn-voltar::after {
+    content: '';
+  }
 
-header p {
-  font-size: 1.1rem;
-  opacity: 0.85;
+  #btn-voltar::before {
+    content: '⟵';
+    font-size: 1.2rem;
+  }
+
+  #btn-voltar {
+    font-size: 1.2rem;
+    padding: 0.6rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  #btn-voltar span {
+    display: none;
+  }
 }
 
 /* Conteúdo principal */
