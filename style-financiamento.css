@@ -10,7 +10,9 @@ body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
-  padding: 0 1rem 2rem;
+  padding-bottom: 2rem; /* só padding inferior */
+  padding-left: 0;
+  padding-right: 0;
 }
 
 header {
@@ -19,6 +21,10 @@ header {
   text-align: center;
   padding: 2rem 1rem;
   position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100vw; /* garantir que o header ocupe toda a largura da viewport */
+  box-sizing: border-box;
 }
 
 #btn-voltar {
@@ -54,9 +60,10 @@ main {
   max-width: 600px;
   margin: 2rem auto 0;
   background-color: white;
-  padding: 2rem;
+  padding: 2rem 1rem; /* padding lateral para o conteúdo */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 h2 {
@@ -76,7 +83,8 @@ label {
   color: #004aad;
 }
 
-input[type="number"] {
+input[type="number"],
+select {
   width: 100%;
   padding: 0.7rem 1rem;
   font-size: 1rem;
@@ -84,9 +92,11 @@ input[type="number"] {
   border-radius: 8px;
   outline-offset: 2px;
   transition: border-color 0.3s;
+  box-sizing: border-box;
 }
 
-input[type="number"]:focus {
+input[type="number"]:focus,
+select:focus {
   border-color: #004aad;
 }
 
@@ -128,6 +138,10 @@ footer {
   color: #777;
   font-size: 0.9rem;
   user-select: none;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsividade */
@@ -135,7 +149,7 @@ footer {
 @media (max-width: 768px) {
   main {
     margin: 1.5rem 1rem;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
   }
 
   button {
@@ -153,7 +167,8 @@ footer {
     font-size: 1rem;
   }
   
-  input[type="number"] {
+  input[type="number"],
+  select {
     padding: 0.6rem 0.8rem;
   }
 }
