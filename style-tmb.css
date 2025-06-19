@@ -18,21 +18,11 @@ header {
   background-color: #004aad;
   color: white;
   text-align: center;
-  padding: 4.5rem 1rem 2rem;
-  padding-left: 3.5rem; /* espaço extra para botão */
+  padding: 5.5rem 1rem 2rem;
+  padding-left: 3.5rem;
   position: relative;
 }
 
-header h1 {
-  margin-bottom: 0.3rem;
-}
-
-header p {
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
-
-/* Botão Voltar */
 #btn-voltar {
   position: fixed;
   top: 1rem;
@@ -53,26 +43,13 @@ header p {
   transform: translateY(-2px);
 }
 
-/* Versão menor do botão em celulares */
-@media (max-width: 480px) {
-  #btn-voltar::after {
-    content: '';
-  }
+header h1 {
+  margin-bottom: 0.3rem;
+}
 
-  #btn-voltar::before {
-    content: '⟵';
-    font-size: 1.2rem;
-  }
-
-  #btn-voltar {
-    font-size: 1.2rem;
-    padding: 0.6rem 0.8rem;
-    white-space: nowrap;
-  }
-
-  #btn-voltar span {
-    display: none;
-  }
+header p {
+  font-size: 1.1rem;
+  opacity: 0.85;
 }
 
 /* Conteúdo principal */
@@ -119,7 +96,7 @@ select:focus {
   border-color: #004aad;
 }
 
-/* Botão de Ação */
+/* Botão principal */
 .botao-porcentagem {
   text-align: center;
 }
@@ -151,7 +128,7 @@ button:hover {
   min-height: 2.2rem;
 }
 
-/* Explicação adicional */
+/* Explicação */
 .content-explanation {
   margin-top: 3rem;
   line-height: 1.8;
@@ -163,61 +140,4 @@ button:hover {
   color: #004aad;
 }
 
-.content-explanation p,
-.content-explanation ul {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.content-explanation ul {
-  padding-left: 1.2rem;
-}
-
-.content-explanation li {
-  margin-bottom: 0.6rem;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-  color: #777;
-  font-size: 0.9rem;
-  user-select: none;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  main {
-    margin: 1.5rem 1rem;
-    padding: 1.5rem;
-  }
-
-  button {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  header {
-    padding-top: 6rem; /* espaço extra para botão */
-    padding-left: 2.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6rem;
-    margin-left: 1rem;
-  }
-
-  header p {
-    font-size: 1rem;
-    margin-left: 1rem;
-  }
-
-  input[type="number"],
-  select {
-    padding: 0.6rem 0.8rem;
-  }
-}
+.
