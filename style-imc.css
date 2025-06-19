@@ -1,0 +1,216 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+#btn-voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #00337a;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+#btn-voltar:hover {
+  background-color: #002960;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.container h2 {
+  text-align: center;
+  color: #004aad;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.botao-porcentagem {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #00337a;
+}
+
+.resultado {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #004aad;
+  margin-top: 1.5rem;
+}
+
+.content-explanation {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
+}
+
+.content-explanation h2 {
+  color: #004aad;
+  margin-top: 2rem;
+}
+
+.content-explanation table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.content-explanation th,
+.content-explanation td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.content-explanation ul {
+  padding-left: 1.2rem;
+}
+
+.content-explanation ul li {
+  margin-bottom: 0.8rem;
+}
+
+.content-explanation a {
+  color: #004aad;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.content-explanation .faq h3 {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #00337a;
+}
+
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #004aad;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  #btn-voltar {
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .container,
+  .content-explanation {
+    padding: 1.5rem 1rem;
+  }
+
+  input[type="number"] {
+    font-size: 0.95rem;
+  }
+
+  .resultado {
+    font-size: 1.1rem;
+  }
+
+  .content-explanation table th,
+  .content-explanation table td {
+    font-size: 0.95rem;
+  }
+
+  .content-explanation h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-explanation table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .faq h3 {
+    font-size: 1rem;
+  }
+
+  .faq p {
+    font-size: 0.95rem;
+  }
+}
