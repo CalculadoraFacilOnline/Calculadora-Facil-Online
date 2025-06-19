@@ -13,17 +13,19 @@ body {
   padding: 0 1rem 2rem;
 }
 
+/* Cabeçalho */
 header {
   background-color: #004aad;
   color: white;
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 4.5rem 1rem 2rem;
+  padding-left: 3.5rem; /* espaço extra para botão */
   position: relative;
 }
 
-/* Botão Voltar - corrigido */
+/* Botão Voltar */
 #btn-voltar {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   left: 1rem;
   background-color: #004aad;
@@ -34,7 +36,7 @@ header {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  z-index: 10;
+  z-index: 1000;
 }
 
 #btn-voltar:hover {
@@ -51,13 +53,14 @@ header p {
   opacity: 0.85;
 }
 
+/* Conteúdo principal */
 main {
-  max-width: 600px;
+  max-width: 700px;
   margin: 2rem auto 0;
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -66,6 +69,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+/* Formulário */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -93,6 +97,7 @@ select:focus {
   border-color: #004aad;
 }
 
+/* Botão de Ação */
 .botao-porcentagem {
   text-align: center;
 }
@@ -114,6 +119,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* Resultado */
 .resultado {
   margin-top: 2rem;
   font-weight: bold;
@@ -123,31 +129,33 @@ button:hover {
   min-height: 2.2rem;
 }
 
-/* Explicações */
+/* Explicação adicional */
 .content-explanation {
-  max-width: 800px;
-  margin: 3rem auto 0;
-  padding: 1rem 1.5rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-top: 3rem;
+  line-height: 1.8;
 }
 
 .content-explanation h2 {
-  margin-top: 2rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  color: #004aad;
 }
 
 .content-explanation p,
 .content-explanation ul {
-  margin-top: 1rem;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .content-explanation ul {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
+.content-explanation li {
+  margin-bottom: 0.6rem;
+}
+
+/* Rodapé */
 footer {
   text-align: center;
   padding: 1rem;
@@ -157,7 +165,7 @@ footer {
   user-select: none;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 768px) {
   main {
     margin: 1.5rem 1rem;
@@ -170,25 +178,24 @@ footer {
   }
 
   header {
-    padding-top: 5.5rem;
+    padding-top: 6rem; /* espaço extra para botão */
+    padding-left: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.6rem;
+    margin-left: 1rem;
   }
 
   header p {
     font-size: 1rem;
+    margin-left: 1rem;
   }
 
   input[type="number"],
   select {
     padding: 0.6rem 0.8rem;
-  }
-
-  .content-explanation {
-    padding: 1rem;
   }
 }
