@@ -307,3 +307,271 @@ button:hover, .btn:hover {
   background: var(--primary-color);
   color: white;
 }
+/* ===== ESTILOS ESPECÍFICOS PARA SUBPÁGINAS DAS CALCULADORAS ===== */
+
+/* Container da Calculadora */
+.calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+/* Título da Página da Calculadora */
+.page-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 0.5rem auto;
+}
+
+/* Formulário da Calculadora */
+.calculator-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Botão de Calcular */
+.btn-calculate {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.btn-calculate:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Resultados */
+.results-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.result-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success-color);
+    margin: 1rem 0;
+}
+
+.result-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Tabelas de Resultados (para IMC, TMB, etc) */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.result-table th, .result-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-table th {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+.result-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.highlight-row {
+    background-color: rgba(46, 204, 113, 0.1) !important;
+    font-weight: 600;
+}
+
+/* Gráficos (se aplicável) */
+.chart-container {
+    margin: 2rem 0;
+    height: 300px;
+}
+
+/* Informações Adicionais */
+.additional-info {
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+.additional-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsividade para Subpáginas */
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .calculator-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .result-value {
+        font-size: 1.3rem;
+    }
+}
+
+/* Estilos Específicos para Tipos de Calculadoras */
+/* Calculadora de IMC */
+.bmi-category {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.bmi-underweight {
+    background-color: #3498db;
+    color: white;
+}
+
+.bmi-normal {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.bmi-overweight {
+    background-color: #f39c12;
+    color: white;
+}
+
+.bmi-obese {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Calculadora Gestacional */
+.pregnancy-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+.pregnancy-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pregnancy-card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+}
+
+.pregnancy-card-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Calculadora Financeira */
+.installment-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+/* Barra de Progresso (para visualização de resultados) */
+.progress-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
