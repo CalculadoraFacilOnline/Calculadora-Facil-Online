@@ -1,0 +1,244 @@
+Pular para o conteúdo
+Você disse:
+CHar, se me ajuda a criar um CSS?
+O ChatGPT disse:
+Claro que ajudo, sim, bora! Me diz exatamente o que você quer fazer com o CSS:
+
+Vai ser usado em qual tipo de página (ex: calculadora, blog, jogo)?
+
+Quer um estilo mais moderno, minimalista, colorido, retrô...?
+
+Já tem um HTML pronto? (Se tiver, pode colar aqui)
+
+Quer que seja responsivo (funcione bem no celular)?
+
+Com isso eu já consigo montar o CSS direitinho pra você.
+
+Você disse:
+Olha só, eu já tenho o CSS para o index (É uma calculadora) Mas preciso que seja no mesmo estilo para as subpáginas (IMC, finanças etc), Eu gostei mt de como está a página index, queria saber se você poderia personalizar a de IMC, com base no que eu vou te enviar (O HTML DA IMC), fazer um CSS com base no do index (Que se puder, eu também envio).
+O ChatGPT disse:
+Perfeito, manda o HTML da página de IMC e o CSS do index, que eu crio um CSS personalizado no mesmo estilo — responsivo e tudo se for o caso. Assim a aparência entre a index e a subpágina vai ficar bem uniforme.
+
+Pode colar os códigos aqui ou, se preferir, mandar como arquivos. Assim que eu tiver os dois, já começo a montar.
+
+Você disse:
+Na verdade, qual vc prefere, vc cria um style para o index e vc já dá sequência com a ideia? Acho que fica menos confuso...
+O ChatGPT disse:
+Boa ideia, fica mais organizado mesmo! Faz assim então:
+
+Me envia o HTML da sua página index (a calculadora principal).
+
+Eu vou criar um CSS completo e estiloso pra ela — com foco em responsividade, organização e visual limpo.
+
+Depois disso, seguimos o mesmo estilo nas subpáginas (IMC, finanças etc), reaproveitando o visual.
+
+Pode mandar o HTML do index que eu já começo!
+
+Você disse:
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadoras Online Gratuitas: Finanças, Saúde, Matemática e Mais</title>
+    <meta name="description" content="Calculadoras online gratuitas, rápidas e fáceis. IMC, juros compostos, financiamento, porcentagem, gestacional e muito mais.">
+    <meta name="keywords" content="calculadora online, IMC, juros compostos, financiamento, porcentagem, gravidez, gestacional, saúde, matemática, calcular, finanças, saúde, matemática, gestação, gratuita">
+    <meta name="author" content="Calculadora Fácil Online">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
+    <meta property="og:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e muito mais. Simples, rápido e gratuito.">
+    <meta property="og:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
+    <meta property="og:url" content="https://calculadorafacilonline.github.io/calculadoras-online">
+    <meta property="og:site_name" content="Calculadora Fácil Online">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadoras Online Gratuitas - Finanças, Saúde, Matemática e Mais">
+    <meta name="twitter:description" content="Use nossas calculadoras online para IMC, juros compostos, financiamento, gestação e mais. Simples, rápido e gratuito.">
+    <meta name="twitter:image" content="https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Calculadora Fácil Online",
+      "url": "https://calculadorafacilonline.github.io/calculadoras-online",
+      "description": "Calculadoras online gratuitas para finanças, saúde, gestação, matemática e mais.",
+      "image": "https://calculadorafacilonline.github.io/calculadoras-online/img/img-calculadora.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Fácil Online",
+        "url": "https://calculadorafacilonline.github.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://calculadorafacilonline.github.io/calculadoras-online/img/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style-index.css" />
+</head>
+<body>
+    <header>
+        <h1>Calculadoras Online</h1>
+        <p>Ferramentas gratuitas para facilitar sua vida. Simples, rápidas e sempre disponíveis.</p>
+    </header>
+
+    <main>
+        <section class="introducao-site container">
+            <p>Bem-vindo(a) ao <strong>Calculadora Fácil Online</strong>, seu portal completo para ferramentas de cálculo gratuitas e eficientes. Nossa plataforma oferece uma vasta gama de calculadoras para diversas áreas da sua vida, desde <em>finanças pessoais</em> e <em>saúde</em> até <em>matemática</em> do dia a dia e <em>gestação</em>. Simplifique suas decisões com nossa calculadora de IMC, simule investimentos com a calculadora de juros compostos, planeje seu financiamento, calcule porcentagens rapidamente e acompanhe sua gestação com precisão. Todas as nossas ferramentas são desenvolvidas para serem intuitivas, rápidas e acessíveis a qualquer momento, em qualquer dispositivo.</p>
+            <p>Explore nossa coleção abaixo e encontre a calculadora ideal para suas necessidades!</p>
+        </section>
+
+        <section class="calculadoras container">
+            <h2>Escolha uma calculadora</h2>
+            <div class="grid">
+
+                <a href="calculadora-imc.html" class="card" aria-label="Calculadora de IMC">
+                    <h3>Calculadora de IMC</h3>
+                    <p>Descubra seu Índice de Massa Corporal</p>
+                </a>
+
+                <a href="calculadora-tmb.html" class="card" aria-label="Calculadora de TMB">
+                    <h3>Calculadora de TMB</h3>
+                    <p>Descubra sua Taxa Metabólica Basal</p>
+                </a>
+
+                <a href="calculadora-juros-compostos.html" class="card" aria-label="Calculadora de Juros Compostos">
+                    <h3>Calculadora de Juros Compostos</h3>
+                    <p>Simule rendimentos e investimentos</p>
+                </a>
+
+                <a href="calculadora-financiamento.html" class="card" aria-label="Calculadora de Financiamento">
+                    <h3>Calculadora de Financiamento</h3>
+                    <p>Simule parcelas de financiamentos</p>
+                </a>
+
+                <div class="card anuncio full-span" role="region" aria-label="Anuncie aqui">
+                    <p><strong>Anuncie aqui!</strong></p>
+                    <p>Contato: <a href="mailto:calculadorafacilonline@gmail.com">calculadorafacilonline@gmail.com</a></p>
+                </div>
+
+                <a href="calculadora-porcentagem.html" class="card" aria-label="Calculadora de Porcentagem">
+                    <h3>Calculadora de Porcentagem</h3>
+                    <p>Calcule descontos, acréscimos e proporções</p>
+                </a>
+
+                <a href="calculadora-gestacional.html" class="card" aria-label="Calculadora Gestacional">
+                    <h3>Calculadora Gestacional</h3>
+                    <p>Saiba semanas de gestação e a data provável do parto</p>
+                </a>
+
+                <a href="calculadora-padrao.html" class="card" aria-label="Calculadora Padrão">
+                    <h3>Calculadora Padrão</h3>
+                    <p>Realize cálculos simples e rápidos</p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <strong>Calculadora Fácil Online</strong>. Todos os direitos reservados. | <a href="politica-privacidade.html">Política de Privacidade</a> | <a href="termos-uso.html">Termos de Uso</a> | <a href="contato.html">Contato</a></p>
+    </footer>
+</body>
+</html>
+
+Esse é o do index... se puder, deixa ele bem bonito mesmo!! Ah, e se puder também, seria bom ele responsivo.
+O ChatGPT disse:
+
+Responder no chat
+CSS criado! O estilo agora está:
+
+Responsivo, com grid adaptável para dispositivos móveis.
+
+Visual limpo e moderno, com cores suaves e destaque para os títulos.
+
+Cartões com hover, para dar interatividade.
+
+Footer e header bem definidos, com visual profissional.
+
+Pode me enviar agora o HTML da página de IMC que eu aplico esse mesmo padrão visual nela, ajustando o que for necessário!
+
+
+
+
+Nenhum arquivo escolhidoNenhum arquivo escolhido
+O ChatGPT pode cometer erros. Considere verificar informações importantes.
+
+
+Style-index
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+/* Reset e ajustes globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  background-color: #3a7bd5;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
